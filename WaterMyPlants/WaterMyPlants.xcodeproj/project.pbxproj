@@ -13,6 +13,7 @@
 		4414163624063DB8002DD160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414163424063DB8002DD160 /* Main.storyboard */; };
 		4414163824063DB8002DD160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4414163724063DB8002DD160 /* Assets.xcassets */; };
 		4414163B24063DB8002DD160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414163924063DB8002DD160 /* LaunchScreen.storyboard */; };
+		4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4414164224063F29002DD160 /* Plant.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4414163724063DB8002DD160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4414163A24063DB8002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4414163C24063DB8002DD160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4414164324063F29002DD160 /* Plant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plant.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				4414162E24063DB8002DD160 /* AppDelegate.swift */,
+				4414164224063F29002DD160 /* Plant.xcdatamodeld */,
 				4414163024063DB8002DD160 /* SceneDelegate.swift */,
 				4414163224063DB8002DD160 /* ViewController.swift */,
 				4414163424063DB8002DD160 /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4414163324063DB8002DD160 /* ViewController.swift in Sources */,
+				4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */,
 				4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */,
 				4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */,
 			);
@@ -338,6 +342,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4414164224063F29002DD160 /* Plant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4414164324063F29002DD160 /* Plant.xcdatamodel */,
+			);
+			currentVersion = 4414164324063F29002DD160 /* Plant.xcdatamodel */;
+			path = Plant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4414162324063DB8002DD160 /* Project object */;
 }

@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4414160F24063C7C002DD160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414160E24063C7C002DD160 /* AppDelegate.swift */; };
-		4414161124063C7C002DD160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414161024063C7C002DD160 /* SceneDelegate.swift */; };
-		4414161324063C7C002DD160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414161224063C7C002DD160 /* ViewController.swift */; };
-		4414161624063C7C002DD160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414161424063C7C002DD160 /* Main.storyboard */; };
-		4414161824063C7D002DD160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4414161724063C7D002DD160 /* Assets.xcassets */; };
-		4414161B24063C7D002DD160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414161924063C7D002DD160 /* LaunchScreen.storyboard */; };
+		4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414162E24063DB8002DD160 /* AppDelegate.swift */; };
+		4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414163024063DB8002DD160 /* SceneDelegate.swift */; };
+		4414163324063DB8002DD160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414163224063DB8002DD160 /* ViewController.swift */; };
+		4414163624063DB8002DD160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414163424063DB8002DD160 /* Main.storyboard */; };
+		4414163824063DB8002DD160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4414163724063DB8002DD160 /* Assets.xcassets */; };
+		4414163B24063DB8002DD160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414163924063DB8002DD160 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4414160B24063C7C002DD160 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4414160E24063C7C002DD160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4414161024063C7C002DD160 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4414161224063C7C002DD160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4414161524063C7C002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4414161724063C7D002DD160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4414161A24063C7D002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4414161C24063C7D002DD160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4414162B24063DB8002DD160 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4414162E24063DB8002DD160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4414163024063DB8002DD160 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4414163224063DB8002DD160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4414163524063DB8002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4414163724063DB8002DD160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4414163A24063DB8002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4414163C24063DB8002DD160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4414160824063C7C002DD160 /* Frameworks */ = {
+		4414162824063DB8002DD160 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,32 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4414160224063C7C002DD160 = {
+		4414162224063DB8002DD160 = {
 			isa = PBXGroup;
 			children = (
-				4414160D24063C7C002DD160 /* WaterMyPlants */,
-				4414160C24063C7C002DD160 /* Products */,
+				4414162D24063DB8002DD160 /* WaterMyPlants */,
+				4414162C24063DB8002DD160 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4414160C24063C7C002DD160 /* Products */ = {
+		4414162C24063DB8002DD160 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4414160B24063C7C002DD160 /* WaterMyPlants.app */,
+				4414162B24063DB8002DD160 /* WaterMyPlants.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4414160D24063C7C002DD160 /* WaterMyPlants */ = {
+		4414162D24063DB8002DD160 /* WaterMyPlants */ = {
 			isa = PBXGroup;
 			children = (
-				4414160E24063C7C002DD160 /* AppDelegate.swift */,
-				4414161024063C7C002DD160 /* SceneDelegate.swift */,
-				4414161224063C7C002DD160 /* ViewController.swift */,
-				4414161424063C7C002DD160 /* Main.storyboard */,
-				4414161724063C7D002DD160 /* Assets.xcassets */,
-				4414161924063C7D002DD160 /* LaunchScreen.storyboard */,
-				4414161C24063C7D002DD160 /* Info.plist */,
+				4414162E24063DB8002DD160 /* AppDelegate.swift */,
+				4414163024063DB8002DD160 /* SceneDelegate.swift */,
+				4414163224063DB8002DD160 /* ViewController.swift */,
+				4414163424063DB8002DD160 /* Main.storyboard */,
+				4414163724063DB8002DD160 /* Assets.xcassets */,
+				4414163924063DB8002DD160 /* LaunchScreen.storyboard */,
+				4414163C24063DB8002DD160 /* Info.plist */,
 			);
 			path = WaterMyPlants;
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4414160A24063C7C002DD160 /* WaterMyPlants */ = {
+		4414162A24063DB8002DD160 /* WaterMyPlants */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4414161F24063C7D002DD160 /* Build configuration list for PBXNativeTarget "WaterMyPlants" */;
+			buildConfigurationList = 4414163F24063DB8002DD160 /* Build configuration list for PBXNativeTarget "WaterMyPlants" */;
 			buildPhases = (
-				4414160724063C7C002DD160 /* Sources */,
-				4414160824063C7C002DD160 /* Frameworks */,
-				4414160924063C7C002DD160 /* Resources */,
+				4414162724063DB8002DD160 /* Sources */,
+				4414162824063DB8002DD160 /* Frameworks */,
+				4414162924063DB8002DD160 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +84,25 @@
 			);
 			name = WaterMyPlants;
 			productName = WaterMyPlants;
-			productReference = 4414160B24063C7C002DD160 /* WaterMyPlants.app */;
+			productReference = 4414162B24063DB8002DD160 /* WaterMyPlants.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4414160324063C7C002DD160 /* Project object */ = {
+		4414162324063DB8002DD160 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = LambdaPTBuildWeek;
+				ORGANIZATIONNAME = craigswanson;
 				TargetAttributes = {
-					4414160A24063C7C002DD160 = {
+					4414162A24063DB8002DD160 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 4414160624063C7C002DD160 /* Build configuration list for PBXProject "WaterMyPlants" */;
+			buildConfigurationList = 4414162624063DB8002DD160 /* Build configuration list for PBXProject "WaterMyPlants" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 4414160224063C7C002DD160;
-			productRefGroup = 4414160C24063C7C002DD160 /* Products */;
+			mainGroup = 4414162224063DB8002DD160;
+			productRefGroup = 4414162C24063DB8002DD160 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4414160A24063C7C002DD160 /* WaterMyPlants */,
+				4414162A24063DB8002DD160 /* WaterMyPlants */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4414160924063C7C002DD160 /* Resources */ = {
+		4414162924063DB8002DD160 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4414161B24063C7D002DD160 /* LaunchScreen.storyboard in Resources */,
-				4414161824063C7D002DD160 /* Assets.xcassets in Resources */,
-				4414161624063C7C002DD160 /* Main.storyboard in Resources */,
+				4414163B24063DB8002DD160 /* LaunchScreen.storyboard in Resources */,
+				4414163824063DB8002DD160 /* Assets.xcassets in Resources */,
+				4414163624063DB8002DD160 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4414160724063C7C002DD160 /* Sources */ = {
+		4414162724063DB8002DD160 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4414161324063C7C002DD160 /* ViewController.swift in Sources */,
-				4414160F24063C7C002DD160 /* AppDelegate.swift in Sources */,
-				4414161124063C7C002DD160 /* SceneDelegate.swift in Sources */,
+				4414163324063DB8002DD160 /* ViewController.swift in Sources */,
+				4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */,
+				4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4414161424063C7C002DD160 /* Main.storyboard */ = {
+		4414163424063DB8002DD160 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4414161524063C7C002DD160 /* Base */,
+				4414163524063DB8002DD160 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4414161924063C7D002DD160 /* LaunchScreen.storyboard */ = {
+		4414163924063DB8002DD160 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4414161A24063C7D002DD160 /* Base */,
+				4414163A24063DB8002DD160 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4414161D24063C7D002DD160 /* Debug */ = {
+		4414163D24063DB8002DD160 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		4414161E24063C7D002DD160 /* Release */ = {
+		4414163E24063DB8002DD160 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,34 +280,36 @@
 			};
 			name = Release;
 		};
-		4414162024063C7D002DD160 /* Debug */ = {
+		4414164024063DB8002DD160 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MZREBG7BM;
 				INFOPLIST_FILE = WaterMyPlants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com-LambdaPTBuildWeek.WaterMyPlants";
+				PRODUCT_BUNDLE_IDENTIFIER = com.craigswanson.WaterMyPlants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4414162124063C7D002DD160 /* Release */ = {
+		4414164124063DB8002DD160 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MZREBG7BM;
 				INFOPLIST_FILE = WaterMyPlants/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com-LambdaPTBuildWeek.WaterMyPlants";
+				PRODUCT_BUNDLE_IDENTIFIER = com.craigswanson.WaterMyPlants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4414160624063C7C002DD160 /* Build configuration list for PBXProject "WaterMyPlants" */ = {
+		4414162624063DB8002DD160 /* Build configuration list for PBXProject "WaterMyPlants" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4414161D24063C7D002DD160 /* Debug */,
-				4414161E24063C7D002DD160 /* Release */,
+				4414163D24063DB8002DD160 /* Debug */,
+				4414163E24063DB8002DD160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4414161F24063C7D002DD160 /* Build configuration list for PBXNativeTarget "WaterMyPlants" */ = {
+		4414163F24063DB8002DD160 /* Build configuration list for PBXNativeTarget "WaterMyPlants" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4414162024063C7D002DD160 /* Debug */,
-				4414162124063C7D002DD160 /* Release */,
+				4414164024063DB8002DD160 /* Debug */,
+				4414164124063DB8002DD160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4414160324063C7C002DD160 /* Project object */;
+	rootObject = 4414162324063DB8002DD160 /* Project object */;
 }

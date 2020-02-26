@@ -3,7 +3,7 @@
 //  WaterMyPlants
 //
 //  Created by Craig Swanson on 2/25/20.
-//  Copyright © 2020 LambdaPTBuildWeek. All rights reserved.
+//  Copyright © 2020 craigswanson. All rights reserved.
 //
 
 import UIKit

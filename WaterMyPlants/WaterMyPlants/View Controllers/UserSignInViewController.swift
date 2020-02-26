@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UserSignInViewController.swift
 //  WaterMyPlants
 //
 //  Created by Craig Swanson on 2/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserSignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

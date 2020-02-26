@@ -22,6 +22,7 @@
 		44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */; };
 		44C1848D2406528C00B69722 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848C2406528C00B69722 /* PlantDetailViewController.swift */; };
 		44C1848F240652AD00B69722 /* UserPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848E240652AD00B69722 /* UserPlantsTableViewController.swift */; };
+		44C184932407226700B69722 /* UserPlantsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184922407226700B69722 /* UserPlantsTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserRegisterViewController.swift; sourceTree = "<group>"; };
 		44C1848C2406528C00B69722 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		44C1848E240652AD00B69722 /* UserPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlantsTableViewController.swift; sourceTree = "<group>"; };
+		44C184922407226700B69722 /* UserPlantsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlantsTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				4414164F240647C1002DD160 /* Model */,
 				4414164D2406479C002DD160 /* Bearer.swift */,
+				44C18494240722EF00B69722 /* Extensions */,
 				44C18490240652B900B69722 /* View Controllers */,
 				4414163424063DB8002DD160 /* Main.storyboard */,
 				4414162E24063DB8002DD160 /* AppDelegate.swift */,
@@ -108,6 +111,14 @@
 				44C1848E240652AD00B69722 /* UserPlantsTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		44C18494240722EF00B69722 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				44C184922407226700B69722 /* UserPlantsTableVC.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				4414163324063DB8002DD160 /* UserSignInViewController.swift in Sources */,
 				4414164824064760002DD160 /* ModelRepresentation.swift in Sources */,
 				4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */,
+				44C184932407226700B69722 /* UserPlantsTableVC.swift in Sources */,
 				4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */,
 				4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */,
 				4414164A24064770002DD160 /* User+Convenience.swift in Sources */,

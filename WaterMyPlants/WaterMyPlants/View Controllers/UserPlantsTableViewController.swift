@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class UserPlantsTableViewController: UITableViewController {
+
+    private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
+        let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+        fetchRequest.sortDescriptors = [
+        NSSortDescriptor(key: "lastWatered", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = (self as! NSFetchedResultsControllerDelegate)
+        try? frc.performFetch()
+        return frc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

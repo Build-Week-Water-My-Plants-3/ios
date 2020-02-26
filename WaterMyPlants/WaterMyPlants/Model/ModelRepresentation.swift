@@ -20,5 +20,6 @@ struct PlantRepresentation: Codable {
     var nickname: String
     var species: String
     var h2oFrequency: Int
+    var lastWatered: Date
     var image: Data?
 }

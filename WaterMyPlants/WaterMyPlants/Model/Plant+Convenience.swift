@@ -20,12 +20,14 @@ extension Plant {
     }
 
     var plantRepresentation: PlantRepresentation? {
-            guard let nickname = nickname,
-            let species = species else { return nil }
+        guard let nickname = nickname,
+            let species = species,
+            let lastWatered = lastWatered else { return nil }
         return PlantRepresentation(identifier: UUID().uuidString,
                                    nickname: nickname,
                                    species: species,
                                    h2oFrequency: Int(h2oFrequency),
+                                   lastWatered: lastWatered,
                                    image: image)
     }
 
@@ -34,6 +36,7 @@ extension Plant {
                                         nickname: String,
                                         species: String,
                                         h2oFrequency: Int,
+                                        lastWatered: Date = Date(),
                                         image: Data?,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
@@ -41,6 +44,7 @@ extension Plant {
         self.nickname = nickname
         self.species = species
         self.h2oFrequency = Int32(h2oFrequency)
+        self.lastWatered = lastWatered
         self.image = image
     }
 
@@ -51,6 +55,7 @@ extension Plant {
                   nickname: plantRepresentation.nickname,
                   species: plantRepresentation.species,
                   h2oFrequency: plantRepresentation.h2oFrequency,
+                  lastWatered: plantRepresentation.lastWatered,
                   image: plantRepresentation.image)
     }
 }

@@ -14,6 +14,11 @@
 		4414163824063DB8002DD160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4414163724063DB8002DD160 /* Assets.xcassets */; };
 		4414163B24063DB8002DD160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4414163924063DB8002DD160 /* LaunchScreen.storyboard */; };
 		4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4414164224063F29002DD160 /* Plant.xcdatamodeld */; };
+		4414164624064588002DD160 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164524064588002DD160 /* CoreDataStack.swift */; };
+		4414164824064760002DD160 /* ModelRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164724064760002DD160 /* ModelRepresentation.swift */; };
+		4414164A24064770002DD160 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164924064770002DD160 /* User+Convenience.swift */; };
+		4414164C2406477E002DD160 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164B2406477E002DD160 /* Plant+Convenience.swift */; };
+		4414164E2406479C002DD160 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164D2406479C002DD160 /* Bearer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		4414163A24063DB8002DD160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4414163C24063DB8002DD160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4414164324063F29002DD160 /* Plant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plant.xcdatamodel; sourceTree = "<group>"; };
+		4414164524064588002DD160 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4414164724064760002DD160 /* ModelRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRepresentation.swift; sourceTree = "<group>"; };
+		4414164924064770002DD160 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		4414164B2406477E002DD160 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
+		4414164D2406479C002DD160 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				4414162E24063DB8002DD160 /* AppDelegate.swift */,
-				4414164224063F29002DD160 /* Plant.xcdatamodeld */,
+				4414164F240647C1002DD160 /* Model */,
+				4414164D2406479C002DD160 /* Bearer.swift */,
 				4414163024063DB8002DD160 /* SceneDelegate.swift */,
 				4414163224063DB8002DD160 /* ViewController.swift */,
 				4414163424063DB8002DD160 /* Main.storyboard */,
@@ -68,6 +79,18 @@
 				4414163C24063DB8002DD160 /* Info.plist */,
 			);
 			path = WaterMyPlants;
+			sourceTree = "<group>";
+		};
+		4414164F240647C1002DD160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4414164224063F29002DD160 /* Plant.xcdatamodeld */,
+				4414164524064588002DD160 /* CoreDataStack.swift */,
+				4414164724064760002DD160 /* ModelRepresentation.swift */,
+				4414164924064770002DD160 /* User+Convenience.swift */,
+				4414164B2406477E002DD160 /* Plant+Convenience.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4414164624064588002DD160 /* CoreDataStack.swift in Sources */,
+				4414164C2406477E002DD160 /* Plant+Convenience.swift in Sources */,
+				4414164E2406479C002DD160 /* Bearer.swift in Sources */,
 				4414163324063DB8002DD160 /* ViewController.swift in Sources */,
+				4414164824064760002DD160 /* ModelRepresentation.swift in Sources */,
 				4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */,
 				4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */,
 				4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */,
+				4414164A24064770002DD160 /* User+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class UserPlantsTableViewController: UITableViewController {
                                              managedObjectContext: moc,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
-        frc.delegate = (self as! NSFetchedResultsControllerDelegate)
+        frc.delegate = (self as NSFetchedResultsControllerDelegate)
         try? frc.performFetch()
         return frc
     }()

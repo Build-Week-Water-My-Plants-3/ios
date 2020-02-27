@@ -16,12 +16,12 @@ class UserPlantsTableViewController: UITableViewController {
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [
-        NSSortDescriptor(key: "lastWatered", ascending: true)
+        NSSortDescriptor(key: "species", ascending: true)
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "lastWatered",
+                                             sectionNameKeyPath: "species",
                                              cacheName: nil)
         frc.delegate = (self as NSFetchedResultsControllerDelegate)
         try? frc.performFetch()
@@ -36,7 +36,7 @@ class UserPlantsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // fake data for testing
-        let newPlant = Plant(nickname: "Marge", species: "Hibiscus", h2oFrequency: 2, image: nil)
+        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
         plantController.put(plant: newPlant)
     }
 
@@ -55,9 +55,12 @@ class UserPlantsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         let sectionName = sectionInfo.name
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         return sectionName
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ssZ"
+//        let sectionDate: Date = dateFormatter.date(from: sectionName)!
+//        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+//        return Date.stringFormattedDate(from: sectionDate)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 extension User {
-    
+
     // these will change when we get the api endpoints.
     enum CodingKeys: String, CodingKey {
         case identifier = "identifer"
@@ -18,10 +18,37 @@ extension User {
         case phoneNumber = "phoneNumber"
         case username = "username"
     }
-    
+
+    var userRepresentation: UserRepresentation? {
+        guard let password = password,
+        let phoneNumber = phoneNumber,
+            let username = username else { return nil }
+        return UserRepresentation(identifier: UUID().uuidString,
+                                  password: password,
+                                  phoneNumber: phoneNumber,
+                                  username: username)
+    }
+
     // need to add a convenience initializer
-    
+    @discardableResult convenience init(identifier: UUID = UUID(),
+                                        password: String,
+                                        phoneNumber: String,
+                                        username: String,
+                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+
+        self.init(context: context)
+        self.identifier = identifier
+        self.password = password
+        self.phoneNumber = phoneNumber
+        self.username = username
+    }
+
     // need to add a "representation" convenience initializer
-    
-    // need to add a "userRepresentation" property of type "UserRepresentation"  (see example project)
+    @discardableResult convenience init?(userRepresentation: UserRepresentation, context: NSManagedObjectContext) {
+
+        self.init(identifier: UUID(uuidString: userRepresentation.identifier) ?? UUID(),
+                  password: userRepresentation.password,
+                  phoneNumber: userRepresentation.phoneNumber,
+                  username: userRepresentation.username)
+    }
 }

@@ -16,7 +16,7 @@ class PlantTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var plantNicknameLabel: UILabel!
-    @IBOutlet weak var plantImage: UIImage!
+    @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var daysToNextWatering: UILabel!
     
     override func awakeFromNib() {
@@ -34,7 +34,7 @@ class PlantTableViewCell: UITableViewCell {
         guard let plant = plant else { return }
         plantNicknameLabel.text = plant.nickname
         if let plantImageData = plant.image {
-            plantImage = UIImage(data: plantImageData)
+            plantImage.image = UIImage(data: plantImageData)
         }
     }
 

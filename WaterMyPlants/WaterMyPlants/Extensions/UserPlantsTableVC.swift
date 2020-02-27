@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 // This file has extensions for the UserPlantsTableViewController
 // Its purpose is to make that file more readable
@@ -59,4 +60,13 @@ extension UserPlantsTableViewController: NSFetchedResultsControllerDelegate {
             break
         }
     }
+}
+
+extension UserPlantsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+//        currentSearchText = text
+        // insert search function call here
+    }
+
 }

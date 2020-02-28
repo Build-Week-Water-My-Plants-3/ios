@@ -343,7 +343,7 @@
         <!--Plants-->
         <scene sceneID="A7F-vZ-dzh">
             <objects>
-                <viewController id="py2-8r-EYr" sceneMemberID="viewController">
+                <viewController id="py2-8r-EYr" customClass="UserPlantsViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8br-iF-aNX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,6 +400,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="py2-8r-EYr" id="AFx-RQ-xYf"/>
+                                    <outlet property="delegate" destination="py2-8r-EYr" id="go1-U5-EQK"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-Do-yp8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
@@ -420,6 +424,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="Ghy-Dr-LhH"/>
                     <navigationItem key="navigationItem" title="Plants" id="XlX-jD-sTC"/>
+                    <connections>
+                        <outlet property="tableView" destination="k9R-7p-JnV" id="PzY-IQ-xcy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSO-SA-nyP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

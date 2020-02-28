@@ -4,7 +4,7 @@
         <attribute name="h2oFrequency" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="identifier" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
-        <attribute name="lastWatered" transient="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastWatered" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="nickname" attributeType="String"/>
         <attribute name="species" attributeType="String"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="plants" inverseEntity="User"/>

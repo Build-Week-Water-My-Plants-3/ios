@@ -9,22 +9,60 @@
 import UIKit
 
 class NewUserRegisterViewController: UIViewController {
-
+    
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var phoneNumberTextField: UITextField!
+    @IBOutlet private weak var signUpButton: UIButton!
+    
+    var userController: UserController?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Action Handlers
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        // perform login or sign up operation based on loginType
+        guard let userController = userController else { return }
+        
+        if let username = usernameTextField.text,
+            !username.isEmpty,
+            let password = passwordTextField.text,
+            !password.isEmpty,
+            let phoneNumber = phoneNumberTextField.text,
+            !phoneNumber.isEmpty {
+            
+            let user = UserRepresentation(password: password,
+                                          phoneNumber: phoneNumber,
+                                          username: username)
+            
+            
+            userController.signUp(with: user) { error in
+                if let error = error {
+                    print("Error occured during sign up: \(error)")
+                } else {
+                    /// perform sign in api call that is on the main thread because its a UI call
+                    DispatchQueue.main.async {
+                        /// alert window
+                        let alertController = UIAlertController(
+                            title: "Sign Up Successfull",
+                            message: "Now please log in.",
+                            preferredStyle: .alert)
+                        /// alert button
+                        let alertAction = UIAlertAction(
+                            title: "OK",
+                            style: UIAlertAction.Style.default,
+                            handler: { action -> Void in
+                                self.performSegue(withIdentifier: "SignInSegue", sender: self)
+                        })
+                        /// adding action to alert controller
+                        alertController.addAction(alertAction)
+                        
+                    }
+                }
+            }
+        }
     }
-    */
-
 }

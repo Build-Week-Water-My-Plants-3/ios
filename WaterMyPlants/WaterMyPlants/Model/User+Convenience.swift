@@ -21,7 +21,7 @@ extension User {
     var userRepresentation: UserRepresentation? {
         guard let password = password,
         let phoneNumber = phoneNumber,
-            let username = username else { return nil }
+        let username = username else { return nil }
         return UserRepresentation(password: password,
                                   phoneNumber: phoneNumber,
                                   username: username)

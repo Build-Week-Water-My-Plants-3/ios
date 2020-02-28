@@ -19,7 +19,7 @@ class UserController {
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         // get and change endpoint!!!
-        let registerUserURL = baseURL.appendingPathComponent("Endpoint/users/signup")
+        let registerUserURL = baseURL.appendingPathComponent("usersname/signup")
         var request = URLRequest(url: registerUserURL)
         request.httpMethod = HTTPMethod.post.rawValue
         // get and change endpoints!!!
@@ -52,7 +52,7 @@ class UserController {
     // MARK: - Log In Existing User
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         // get and change endpoints!!!
-        let logInURL = baseURL.appendingPathComponent("users/login")
+        let logInURL = baseURL.appendingPathComponent("username/login")
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.post.rawValue
         // get and change endpoints!!!

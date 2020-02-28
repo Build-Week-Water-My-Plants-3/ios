@@ -31,7 +31,9 @@ extension Plant {
                                    image: image)
     }
     
-    // var afalgja;lgja;lgj
+    var nextWaterDate: String {
+        return "here"
+    }
 
     // need to add a convenience initializer
     @discardableResult convenience init(identifier: UUID = UUID(),

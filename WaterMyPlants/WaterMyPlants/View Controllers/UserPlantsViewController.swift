@@ -1,5 +1,5 @@
 //
-//  UserPlantsTableViewController.swift
+//  UserPlantsViewController.swift
 //  WaterMyPlants
 //
 //  Created by Craig Swanson on 2/26/20.
@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class UserPlantsTableViewController: UIViewController {
+class UserPlantsViewController: UIViewController {
     
     var plantController = PlantController()
-
+    
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -23,7 +23,8 @@ class UserPlantsTableViewController: UIViewController {
                                              managedObjectContext: moc,
                                              sectionNameKeyPath: "species",
                                              cacheName: nil)
-        frc.delegate = (self as NSFetchedResultsControllerDelegate)
+
+        frc.delegate = self
         try? frc.performFetch()
         return frc
     }()
@@ -32,16 +33,18 @@ class UserPlantsTableViewController: UIViewController {
     var currentSearchText = ""
     */
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // fake data for testing
-        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
-        plantController.put(plant: newPlant)
+//        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
+//        plantController.put(plant: newPlant)
     }
 }
     // MARK: - Table view data source
-extension UserPlantsTableViewController: UITableViewDataSource {
+extension UserPlantsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return fetchedResultsController.sections?.count ?? 0

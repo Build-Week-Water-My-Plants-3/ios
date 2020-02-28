@@ -29,6 +29,9 @@ class UserPlantsViewController: UIViewController {
         return frc
     }()
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     /*  for use with possible implementation of a search bar
     var currentSearchText = ""
     */

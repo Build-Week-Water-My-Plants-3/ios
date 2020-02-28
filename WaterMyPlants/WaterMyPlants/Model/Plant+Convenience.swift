@@ -30,10 +30,6 @@ extension Plant {
                                    lastWatered: lastWatered,
                                    image: image)
     }
-    
-    var nextWaterDate: String {
-        return "here"
-    }
 
     // need to add a convenience initializer
     @discardableResult convenience init(identifier: UUID = UUID(),
@@ -61,5 +57,15 @@ extension Plant {
                   h2oFrequency: plantRepresentation.h2oFrequency,
                   lastWatered: plantRepresentation.lastWatered,
                   image: plantRepresentation.image)
+    }
+    
+    // Calculation for next watering date
+    var nextWaterDate: String {
+        guard let lastWatered = lastWatered else { return "" }
+        var dateComponent = DateComponents()
+        dateComponent.day = Int(h2oFrequency)
+        let newWaterDate = Calendar.current.date(byAdding: dateComponent, to: lastWatered)
+        
+        return Date.stringFormattedDate(from: newWaterDate!)
     }
 }

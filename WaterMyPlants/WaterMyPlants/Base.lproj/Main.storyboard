@@ -367,12 +367,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UyY-vu-XUd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UyY-vu-XUd">
                                                             <rect key="frame" x="136" y="0.0" width="80" height="62"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="UyY-vu-XUd" secondAttribute="height" multiplier="40:31" id="Hfx-6b-zM3"/>
-                                                                <constraint firstAttribute="height" constant="62" id="Pvx-f4-adJ"/>
-                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDL-ID-mTF">
                                                             <rect key="frame" x="316" y="0.0" width="38" height="62"/>

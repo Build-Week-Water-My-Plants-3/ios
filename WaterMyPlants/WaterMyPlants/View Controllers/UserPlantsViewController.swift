@@ -16,12 +16,12 @@ class UserPlantsViewController: UIViewController {
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [
-        NSSortDescriptor(key: "nextWaterDate", ascending: true)
+        NSSortDescriptor(key: "species", ascending: true)
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "nextWaterDate",
+                                             sectionNameKeyPath: "species",
                                              cacheName: nil)
 
         frc.delegate = self

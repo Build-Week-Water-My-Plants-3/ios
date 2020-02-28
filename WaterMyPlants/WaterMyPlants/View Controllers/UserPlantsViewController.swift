@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class UserPlantsViewController: UIViewController {
+class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
     var plantController = PlantController()
     
@@ -30,13 +30,15 @@ class UserPlantsViewController: UIViewController {
     }()
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
     
     /*  for use with possible implementation of a search bar
     var currentSearchText = ""
     */
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +64,6 @@ extension UserPlantsViewController: UITableViewDataSource {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         let sectionName = sectionInfo.name
         return sectionName
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ssZ"
-//        let sectionDate: Date = dateFormatter.date(from: sectionName)!
-//        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-//        return Date.stringFormattedDate(from: sectionDate)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

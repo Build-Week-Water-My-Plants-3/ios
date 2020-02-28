@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="py2-8r-EYr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYu-aU-LUK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfF-Pv-9vr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2650.7246376811595" y="2734.8214285714284"/>
+            <point key="canvasLocation" x="3075" y="2875"/>
         </scene>
         <!--Add Plant-->
         <scene sceneID="yGQ-rc-Ane">
@@ -338,18 +338,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYC-OA-Xv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3437.68115942029" y="2734.8214285714284"/>
+            <point key="canvasLocation" x="3755" y="2875"/>
         </scene>
         <!--Plants-->
         <scene sceneID="A7F-vZ-dzh">
             <objects>
                 <viewController id="py2-8r-EYr" customClass="UserPlantsViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8br-iF-aNX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-7p-JnV">
-                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantCell" rowHeight="90" id="cVo-NU-RIh" customClass="PlantTableViewCell" customModule="WaterMyPlants" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
@@ -400,7 +400,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-Do-yp8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -453,6 +453,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-tA-uQX">
                                 <rect key="frame" x="184" y="589" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="kVh-lf-N6K" eventType="touchUpInside" id="Vpe-O0-fw7"/>
+                                    <segue destination="py2-8r-EYr" kind="show" identifier="PlantViewSegue" id="jAG-3U-ar7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-FO-zp1">
                                 <rect key="frame" x="147" y="690" width="120" height="21"/>
@@ -494,6 +498,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c92-kS-Nmn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="df2-f8-JTs"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="LX0-9r-hUD" id="jv9-LW-QBB"/>
+                        <outlet property="signInButton" destination="38u-tA-uQX" id="TsI-Hu-h9O"/>
+                        <outlet property="usernameTextField" destination="ueP-U1-5yx" id="pyy-xx-I9t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-ib-UIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -515,7 +525,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="hyP-Lb-v2Q" kind="presentation" id="55m-c7-kYQ"/>
+                                    <segue destination="hyP-Lb-v2Q" kind="presentation" identifier="SignUpSegue" id="55m-c7-kYQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-fF-30Q">
@@ -526,7 +536,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="kVh-lf-N6K" kind="presentation" id="XnS-YF-8Hl"/>
+                                    <segue destination="kVh-lf-N6K" kind="presentation" identifier="SignInSegue" id="XnS-YF-8Hl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water My Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-8K-hhb">
@@ -579,12 +589,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6D-9f-Mgu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2651" y="2009"/>
+            <point key="canvasLocation" x="2446" y="1906"/>
         </scene>
-        <!--User Sign In View Controller-->
+        <!--New User Register View Controller-->
         <scene sceneID="T6H-zM-ZI9">
             <objects>
-                <viewController id="hyP-Lb-v2Q" customClass="UserSignInViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hyP-Lb-v2Q" customClass="NewUserRegisterViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9g-5S-Bog">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,6 +618,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-Xg-dqK">
                                 <rect key="frame" x="180" y="588" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="hyP-Lb-v2Q" eventType="touchUpInside" id="h1C-fk-QQL"/>
+                                    <segue destination="kVh-lf-N6K" kind="show" identifier="SignUpSignInSegue" id="Pg0-9W-VqP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-oN-mD6">
                                 <rect key="frame" x="207" y="193" width="187" height="34"/>
@@ -668,10 +682,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cYl-RP-Svf"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="kgq-xm-CF1" id="2cV-JH-egH"/>
+                        <outlet property="phoneNumberTextField" destination="4UN-oN-mD6" id="leF-x8-BWv"/>
+                        <outlet property="signUpButton" destination="aPd-Xg-dqK" id="TtX-VJ-DIN"/>
+                        <outlet property="usernameTextField" destination="yBL-O9-TUO" id="yPA-QG-Mcz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfR-VU-dmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160.8695652173915" y="2734.8214285714284"/>
+            <point key="canvasLocation" x="991" y="2735"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pg0-9W-VqP"/>
+        <segue reference="jAG-3U-ar7"/>
+    </inferredMetricsTieBreakers>
 </document>

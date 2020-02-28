@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class UserPlantsTableViewController: UITableViewController {
+class UserPlantsTableViewController: UIViewController {
     
     var plantController = PlantController()
 
@@ -39,20 +39,20 @@ class UserPlantsTableViewController: UITableViewController {
         let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
         plantController.put(plant: newPlant)
     }
-
+}
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension UserPlantsTableViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return fetchedResultsController.sections?.count ?? 0
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         let sectionName = sectionInfo.name
         return sectionName
@@ -63,7 +63,7 @@ class UserPlantsTableViewController: UITableViewController {
 //        return Date.stringFormattedDate(from: sectionDate)
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCell", for: indexPath)
             as? PlantTableViewCell else { return UITableViewCell() }
         
@@ -74,7 +74,7 @@ class UserPlantsTableViewController: UITableViewController {
     }
 
     // Swip to delete
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let plant = fetchedResultsController.object(at: indexPath)

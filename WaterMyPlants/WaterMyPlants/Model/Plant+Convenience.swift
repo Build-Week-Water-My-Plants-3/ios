@@ -30,6 +30,8 @@ extension Plant {
                                    lastWatered: lastWatered,
                                    image: image)
     }
+    
+    // var afalgja;lgja;lgj
 
     // need to add a convenience initializer
     @discardableResult convenience init(identifier: UUID = UUID(),

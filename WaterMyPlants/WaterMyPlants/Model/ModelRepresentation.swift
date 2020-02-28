@@ -9,7 +9,6 @@
 import Foundation
 
 struct UserRepresentation: Codable {
-    var identifier: String
     var password: String
     var phoneNumber: String
     var username: String

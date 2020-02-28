@@ -40,8 +40,7 @@ class UserSignInViewController: UIViewController {
             let phoneNumber = phoneNumberTextField.text,
             !phoneNumber.isEmpty {
             
-            let user = UserRepresentation(identifier: UUID().uuidString,
-                                          password: password,
+            let user = UserRepresentation(password: password,
                                           phoneNumber: phoneNumber,
                                           username: username)
             
@@ -102,4 +101,3 @@ class UserSignInViewController: UIViewController {
         }
     }
 }
-

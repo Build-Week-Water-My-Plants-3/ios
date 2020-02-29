@@ -44,8 +44,8 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         // fake data for testing
-//        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
-//        plantController.put(plant: newPlant)
+        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
+        plantController.put(plant: newPlant)
     }
 }
     // MARK: - Table view data source

@@ -49,8 +49,8 @@ class PlantTableViewCell: UITableViewCell {
         var dateComponent = DateComponents()
         dateComponent.day = Int(plant.h2oFrequency)
         let newWaterDate = Calendar.current.date(byAdding: dateComponent, to: lastWatered)
-        let daysRemaining = Calendar.current.dateComponents([.day], from: today, to: newWaterDate!)
-        return "\(daysRemaining)"
+        let daysRemaining = Calendar.current.dateComponents([.day], from: today, to: newWaterDate!).day
+        return "\(daysRemaining!)"
     }
 
 }

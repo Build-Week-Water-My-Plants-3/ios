@@ -15,7 +15,7 @@ class NewUserRegisterViewController: UIViewController {
     @IBOutlet private weak var phoneNumberTextField: UITextField!
     @IBOutlet private weak var signUpButton: UIButton!
     
-    var userController: UserController?
+    var userController = UserController()
     
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class NewUserRegisterViewController: UIViewController {
     // MARK: - Action Handlers
     @IBAction func buttonTapped(_ sender: UIButton) {
         // perform login or sign up operation based on loginType
-        guard let userController = userController else { return }
+
         
         if let username = usernameTextField.text,
             !username.isEmpty,
@@ -59,6 +59,7 @@ class NewUserRegisterViewController: UIViewController {
                         })
                         /// adding action to alert controller
                         alertController.addAction(alertAction)
+                        self.present(alertController, animated: true)
                         
                     }
                 }

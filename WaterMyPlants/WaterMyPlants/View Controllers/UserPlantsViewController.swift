@@ -42,9 +42,9 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        plantController.fetchPlantsFromServer()
         // fake data for testing
-//        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
+//        let newPlant = Plant(nickname: "Audrey2", species: "Venus Fly Trap", h2oFrequency: 1, image: nil)
 //        plantController.put(plant: newPlant)
     }
 }
@@ -100,14 +100,21 @@ extension UserPlantsViewController: UITableViewDataSource {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PlantDetailSegue" {
+            guard let plantDetailVC = segue.destination as? PlantDetailViewController else { return }
+            plantDetailVC.plantController = plantController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+            plantDetailVC.plant = fetchedResultsController.object(at: indexPath)
+            }
+        }
+        
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }

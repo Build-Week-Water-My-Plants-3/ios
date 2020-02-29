@@ -12,39 +12,41 @@ import CoreData
 
 class UserController {
     // Linking to firebase database for testing networking code
-    private let baseURL = URL(string: "https://w4t3rmypl4nt5.firebaseio.com/")!
+    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/")!
     
     var bearer: Bearer?
     
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         // get and change endpoint!!!
-        let registerUserURL = baseURL.appendingPathComponent("usersname/signup")
+        let registerUserURL = baseURL.appendingPathComponent(user.username).appendingPathExtension("json")
         var request = URLRequest(url: registerUserURL)
-        request.httpMethod = HTTPMethod.post.rawValue
-        // get and change endpoints!!!
-        request.setValue("application/json", forHTTPHeaderField: "content-Type")
+        request.httpMethod = HTTPMethod.put.rawValue
         
-        let jsonEncoder = JSONEncoder()
+        // get and change endpoints!!!
+//        request.setValue("application/json", forHTTPHeaderField: "content-Type")
+        
+//        let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(user)
-            request.httpBody = jsonData
+//            let jsonData = try jsonEncoder.encode(user)
+            request.httpBody = try JSONEncoder().encode(user)
+//            request.httpBody = jsonData
         } catch {
             print("Error encoding user object: \(error)")
             completion(error)
             return
         }
         
-        URLSession.shared.dataTask(with: request) { _, response, error in
+        URLSession.shared.dataTask(with: request) { _, _, error in
             if let error = error {
                 completion(error)
                 return
             }
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
-                return
-            }
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+//                return
+//            }
             completion(nil)
         }.resume()
     }
@@ -52,7 +54,8 @@ class UserController {
     // MARK: - Log In Existing User
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         // get and change endpoints!!!
-        let logInURL = baseURL.appendingPathComponent("username/login")
+        let logInURL = baseURL
+        
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.post.rawValue
         // get and change endpoints!!!

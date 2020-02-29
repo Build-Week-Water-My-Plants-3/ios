@@ -9,6 +9,19 @@
 import UIKit
 
 class PlantDetailViewController: UIViewController {
+    
+    var plant: Plant? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var plantNicknameTextField: UITextField!
+    @IBOutlet weak var plantSpeciesTextField: UITextField!
+    @IBOutlet weak var plantH2oFrequency: UITextField!
+    @IBOutlet weak var nextWateringDateLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +29,9 @@ class PlantDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func updateViews() {
+        
+    }
 
     /*
     // MARK: - Navigation

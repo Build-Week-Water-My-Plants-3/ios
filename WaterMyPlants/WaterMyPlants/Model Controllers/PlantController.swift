@@ -71,8 +71,10 @@ class PlantController {
             }
 
             do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.dateDecodingStrategy = .iso8601
                 var plants: [PlantRepresentation] = []
-                plants = Array(try JSONDecoder().decode([String: PlantRepresentation].self, from: data).values)
+                plants = Array(try jsonDecoder.decode([String: PlantRepresentation].self, from: data).values)
 
                 try self.updatePlants(with: plants)
 

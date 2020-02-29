@@ -10,6 +10,7 @@ import UIKit
 
 class PlantDetailViewController: UIViewController {
     
+    // MARK: - Properties
     var plantController: PlantController?
     var plant: Plant? {
         didSet {
@@ -17,24 +18,36 @@ class PlantDetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Outlets
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var plantNicknameTextField: UITextField!
     @IBOutlet weak var plantSpeciesTextField: UITextField!
     @IBOutlet weak var plantH2oFrequency: UITextField!
     @IBOutlet weak var nextWateringDateLabel: UILabel!
     
-
+    // MARK: - View Control Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateViews()
     }
     
+    // MARK: - Actions
+    @IBAction func addPhotoFromLibrary(_ sender: UIButton) {
+        
+    }
+    
+    // MARK: - Methods
     func updateViews() {
         guard isViewLoaded else { return }
         
         if let plant = plant {
             title = plant.nickname
+            if let plantImage = plant.image {
+                
+            } else {
+                plantImageView.image = #imageLiteral(resourceName: "default")
+            }
 //            plantImageView.image = plant.image  TODO: all the image stuff
             plantNicknameTextField.text = plant.nickname
             plantSpeciesTextField.text = plant.species
@@ -44,8 +57,7 @@ class PlantDetailViewController: UIViewController {
         }
     }
     
-    // This function calculates the next watering date and then subtracts the current date from the next watering date (giving us the time remaining until we need to water the plant again).
-    // It takes out the value for the number of days from the result and returns that value in type String.
+    // TODO: write this function once only
     func daysToWateringCalc() -> String {
         guard let plant = plant else { return "" }
         guard let lastWatered = plant.lastWatered else { return "" }
@@ -60,15 +72,4 @@ class PlantDetailViewController: UIViewController {
             return "\(daysRemaining + 1) Day"
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

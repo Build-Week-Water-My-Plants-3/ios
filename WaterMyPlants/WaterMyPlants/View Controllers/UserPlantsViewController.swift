@@ -44,7 +44,7 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         // fake data for testing
-        let newPlant = Plant(nickname: "Francis", species: "Aloe", h2oFrequency: 14, image: nil)
+        let newPlant = Plant(nickname: "Cindy", species: "Fern", h2oFrequency: 10, image: nil)
         plantController.put(plant: newPlant)
     }
 }

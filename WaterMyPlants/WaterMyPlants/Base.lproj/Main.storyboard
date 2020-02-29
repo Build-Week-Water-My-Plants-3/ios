@@ -422,7 +422,7 @@
                                             <outlet property="daysToNextWatering" destination="GDL-ID-mTF" id="HN9-Jt-NUy"/>
                                             <outlet property="plantImage" destination="UyY-vu-XUd" id="oMB-Sg-szP"/>
                                             <outlet property="plantNicknameLabel" destination="nJa-Jq-Qhp" id="Yi8-mT-InB"/>
-                                            <segue destination="XIH-UZ-aEH" kind="show" id="fYq-0d-rU1"/>
+                                            <segue destination="XIH-UZ-aEH" kind="show" identifier="PlantDetailSegue" id="fYq-0d-rU1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

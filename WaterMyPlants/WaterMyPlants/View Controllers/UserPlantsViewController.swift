@@ -100,14 +100,21 @@ extension UserPlantsViewController: UITableViewDataSource {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PlantDetailSegue" {
+            guard let plantDetailVC = segue.destination as? PlantDetailViewController else { return }
+            plantDetailVC.plantController = plantController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+            plantDetailVC.plant = fetchedResultsController.object(at: indexPath)
+            }
+        }
+        
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }

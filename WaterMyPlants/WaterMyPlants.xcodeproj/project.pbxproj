@@ -28,6 +28,7 @@
 		44C1849B24074AC300B69722 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1849A24074AC300B69722 /* HTTPMethod.swift */; };
 		44C184AB240839B200B69722 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AA240839B200B69722 /* PlantTableViewCell.swift */; };
 		44C184AD2408512200B69722 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AC2408512200B69722 /* DateFormatter.swift */; };
+		44C184B0240C403400B69722 /* EditPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AF240C403400B69722 /* EditPlantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		44C1849A24074AC300B69722 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		44C184AA240839B200B69722 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
 		44C184AC2408512200B69722 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		44C184AF240C403400B69722 /* EditPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				4414163224063DB8002DD160 /* UserSignInViewController.swift */,
 				44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */,
 				44C1848C2406528C00B69722 /* PlantDetailViewController.swift */,
+				44C184AF240C403400B69722 /* EditPlantViewController.swift */,
 				44C1848E240652AD00B69722 /* UserPlantsViewController.swift */,
 				44C184AA240839B200B69722 /* PlantTableViewCell.swift */,
 			);
@@ -256,6 +259,7 @@
 				4414164824064760002DD160 /* ModelRepresentation.swift in Sources */,
 				4414164424063F29002DD160 /* Plant.xcdatamodeld in Sources */,
 				44C184932407226700B69722 /* UserPlantsVC.swift in Sources */,
+				44C184B0240C403400B69722 /* EditPlantViewController.swift in Sources */,
 				44C18498240723E800B69722 /* PlantController.swift in Sources */,
 				4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */,
 				44C1849B24074AC300B69722 /* HTTPMethod.swift in Sources */,

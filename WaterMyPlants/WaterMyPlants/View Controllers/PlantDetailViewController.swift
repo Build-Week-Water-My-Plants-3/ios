@@ -34,9 +34,11 @@ class PlantDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func addPhotoFromLibrary(_ sender: UIButton) {
-        
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
+    
+    
     
     // MARK: - Methods
     func updateViews() {
@@ -74,6 +76,16 @@ class PlantDetailViewController: UIViewController {
             return "Watering is due tomorrow."
         } else {
             return "Watering is past due!"
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditPlantSegue" {
+            guard let editPlantVC = segue.destination as? EditPlantViewController else { return }
+            
+            editPlantVC.plant = plant
+            editPlantVC.plantController = plantController
         }
     }
 }

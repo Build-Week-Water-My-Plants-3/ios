@@ -24,6 +24,7 @@ class PlantDetailViewController: UIViewController {
     @IBOutlet weak var plantSpeciesTextField: UITextField!
     @IBOutlet weak var plantH2oFrequency: UITextField!
     @IBOutlet weak var nextWateringDateLabel: UILabel!
+    @IBOutlet weak var plantWateredButton: UIButton!
     
     // MARK: - View Control Life Cycle
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class PlantDetailViewController: UIViewController {
     func updateViews() {
         guard isViewLoaded else { return }
         
+        plantWateredButton.layer.cornerRadius = 15
         if let plant = plant {
             title = plant.nickname
             if let plantImage = plant.image {

@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0e-8d-UE2">
-                                <rect key="frame" x="100" y="90" width="214" height="285.5"/>
+                                <rect key="frame" x="100" y="30" width="214" height="285.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e0e-8d-UE2" secondAttribute="height" multiplier="3:4" id="ErV-y8-cjp"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N66-ob-ZzO">
-                                <rect key="frame" x="10" y="455.5" width="394" height="173.5"/>
+                                <rect key="frame" x="10" y="395.5" width="394" height="173.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-hw-LCf">
                                         <rect key="frame" x="0.0" y="0.0" width="219" height="173.5"/>
@@ -93,24 +93,34 @@
                                 <state key="normal" title="Save"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-tW-C1E">
-                                <rect key="frame" x="149.5" y="385.5" width="115" height="24"/>
+                                <rect key="frame" x="149.5" y="325.5" width="115" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Add Photo From Library"/>
                                 <connections>
                                     <action selector="addPhotoFromLibrary:" destination="XIH-UZ-aEH" eventType="touchUpInside" id="h4s-Je-sIm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-yU-Fj2">
+                                <rect key="frame" x="50" y="577" width="314" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Plant Watered!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="e0e-8d-UE2" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="100" id="8UN-Z9-8Mn"/>
                             <constraint firstItem="Wxh-tW-C1E" firstAttribute="centerX" secondItem="CD3-R9-ZRo" secondAttribute="centerX" id="K00-1c-msy"/>
-                            <constraint firstItem="e0e-8d-UE2" firstAttribute="top" secondItem="Dxr-ha-nEv" secondAttribute="top" constant="90" id="QNm-Ec-LTM"/>
+                            <constraint firstItem="e0e-8d-UE2" firstAttribute="top" secondItem="Dxr-ha-nEv" secondAttribute="top" constant="30" id="QNm-Ec-LTM"/>
                             <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="e0e-8d-UE2" secondAttribute="trailing" constant="100" id="VJe-I8-KTc"/>
+                            <constraint firstItem="ME7-yU-Fj2" firstAttribute="top" secondItem="N66-ob-ZzO" secondAttribute="bottom" constant="8" id="aLE-9a-8ra"/>
                             <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="N66-ob-ZzO" secondAttribute="trailing" constant="10" id="aiv-G4-ah9"/>
                             <constraint firstItem="Wxh-tW-C1E" firstAttribute="top" secondItem="e0e-8d-UE2" secondAttribute="bottom" constant="10" id="dKm-bD-3q7"/>
                             <constraint firstItem="N66-ob-ZzO" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="10" id="gcw-q6-Z3T"/>
+                            <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="ME7-yU-Fj2" secondAttribute="trailing" constant="50" id="hPQ-6h-T30"/>
                             <constraint firstItem="N66-ob-ZzO" firstAttribute="top" secondItem="e0e-8d-UE2" secondAttribute="bottom" constant="80" id="kWR-Gw-hTT"/>
+                            <constraint firstItem="ME7-yU-Fj2" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="50" id="x82-2S-jUq"/>
                             <constraint firstItem="e0e-8d-UE2" firstAttribute="centerX" secondItem="CD3-R9-ZRo" secondAttribute="centerX" id="xIp-Yp-wCM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dxr-ha-nEv"/>
@@ -122,6 +132,7 @@
                         <outlet property="plantImageView" destination="e0e-8d-UE2" id="3CH-nj-tXc"/>
                         <outlet property="plantNicknameTextField" destination="hq9-BH-b6t" id="65H-BW-cN1"/>
                         <outlet property="plantSpeciesTextField" destination="tgR-13-6TB" id="0F8-Ph-xue"/>
+                        <outlet property="plantWateredButton" destination="ME7-yU-Fj2" id="wff-5r-OBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYN-Pd-Sr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,22 +412,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-j3-HPN">
-                                                    <rect key="frame" x="30" y="14" width="354" height="92"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="98"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-Jq-Qhp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="92"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="98"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UyY-vu-XUd">
-                                                            <rect key="frame" x="141.5" y="0.0" width="69" height="92"/>
+                                                            <rect key="frame" x="131" y="0.0" width="73.5" height="98"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="98" id="KAC-uo-cRE"/>
                                                                 <constraint firstAttribute="width" secondItem="UyY-vu-XUd" secondAttribute="height" multiplier="3:4" id="lUI-Kb-u0l"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDL-ID-mTF">
-                                                            <rect key="frame" x="316" y="0.0" width="38" height="92"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDL-ID-mTF">
+                                                            <rect key="frame" x="262.5" y="0.0" width="111.5" height="98"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -425,10 +437,10 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="AbP-j3-HPN" secondAttribute="bottom" constant="3" id="0HU-kJ-juA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="AbP-j3-HPN" secondAttribute="trailing" constant="10" id="gsL-HE-dPK"/>
-                                                <constraint firstItem="AbP-j3-HPN" firstAttribute="leading" secondItem="tH1-Ca-oTk" secondAttribute="leadingMargin" constant="10" id="m5u-aJ-TCk"/>
-                                                <constraint firstItem="AbP-j3-HPN" firstAttribute="top" secondItem="tH1-Ca-oTk" secondAttribute="topMargin" constant="3" id="qIg-gX-3AR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AbP-j3-HPN" secondAttribute="bottom" id="0HU-kJ-juA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AbP-j3-HPN" secondAttribute="trailing" id="gsL-HE-dPK"/>
+                                                <constraint firstItem="AbP-j3-HPN" firstAttribute="leading" secondItem="tH1-Ca-oTk" secondAttribute="leadingMargin" id="m5u-aJ-TCk"/>
+                                                <constraint firstItem="AbP-j3-HPN" firstAttribute="top" secondItem="tH1-Ca-oTk" secondAttribute="topMargin" id="qIg-gX-3AR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -53,9 +53,11 @@ class PlantTableViewCell: UITableViewCell {
         let newWaterDate = Calendar.current.date(byAdding: dateComponent, to: lastWatered)
         guard let daysRemaining = Calendar.current.dateComponents([.day], from: today, to: newWaterDate!).day else { return ""}
         if daysRemaining >= 1 {
-            return "\(daysRemaining + 1) Days"
+            return "\(daysRemaining + 1) days until next watering."
+        } else if daysRemaining >= 0 {
+            return "Watering is due tomorrow."
         } else {
-            return "\(daysRemaining + 1) Day"
+            return "Watering is past due!"
         }
     }
     

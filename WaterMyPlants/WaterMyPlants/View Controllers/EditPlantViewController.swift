@@ -29,6 +29,7 @@ class EditPlantViewController: UIViewController {
         updateValues()
     }
     
+    // TODO: Need to add delegate so plant detail VC can update itself when edits are made to an existing plant.
     @IBAction func saveChanges(_ sender: UIBarButtonItem) {
         guard let plantController = plantController,
             let nickname = plantNickname.text,

@@ -20,9 +20,9 @@ class PlantDetailViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var plantImageView: UIImageView!
-    @IBOutlet weak var plantNicknameTextField: UITextField!
-    @IBOutlet weak var plantSpeciesTextField: UITextField!
-    @IBOutlet weak var plantH2oFrequency: UITextField!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var h2oFreqencyLabel: UILabel!
     @IBOutlet weak var nextWateringDateLabel: UILabel!
     @IBOutlet weak var plantWateredButton: UIButton!
     
@@ -34,8 +34,8 @@ class PlantDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func addPhotoFromLibrary(_ sender: UIButton) {
-        
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Methods
@@ -51,9 +51,9 @@ class PlantDetailViewController: UIViewController {
                 plantImageView.image = #imageLiteral(resourceName: "default")
             }
 //            plantImageView.image = plant.image  TODO: all the image stuff
-            plantNicknameTextField.text = plant.nickname
-            plantSpeciesTextField.text = plant.species
-            plantH2oFrequency.text = "\(plant.h2oFrequency)"
+            nicknameLabel.text = plant.nickname
+            speciesLabel.text = plant.species
+            h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
             let daysRemaining = daysToWateringCalc()
             nextWateringDateLabel.text = daysRemaining
         }
@@ -69,9 +69,21 @@ class PlantDetailViewController: UIViewController {
         let newWaterDate = Calendar.current.date(byAdding: dateComponent, to: lastWatered)
         guard let daysRemaining = Calendar.current.dateComponents([.day], from: today, to: newWaterDate!).day else { return ""}
         if daysRemaining >= 1 {
-            return "\(daysRemaining + 1) Days"
+            return "\(daysRemaining + 1) days until next watering."
+        } else if daysRemaining >= 0 {
+            return "Watering is due tomorrow."
         } else {
-            return "\(daysRemaining + 1) Day"
+            return "Watering is past due!"
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditPlantSegue" {
+            guard let editPlantVC = segue.destination as? EditPlantViewController else { return }
+            
+            editPlantVC.plant = plant
+            editPlantVC.plantController = plantController
         }
     }
 }

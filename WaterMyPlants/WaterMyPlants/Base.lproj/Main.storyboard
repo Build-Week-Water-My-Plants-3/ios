@@ -21,105 +21,62 @@
                                     <constraint firstAttribute="width" secondItem="e0e-8d-UE2" secondAttribute="height" multiplier="3:4" id="ErV-y8-cjp"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N66-ob-ZzO">
-                                <rect key="frame" x="10" y="395.5" width="394" height="173.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="snd-A8-fHG">
+                                <rect key="frame" x="40" y="357.5" width="334" height="141.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-hw-LCf">
-                                        <rect key="frame" x="0.0" y="0.0" width="219" height="173.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsS-0u-6On">
-                                                <rect key="frame" x="71" y="0.0" width="77" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Species:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGy-78-6HJ">
-                                                <rect key="frame" x="78.5" y="48" width="62" height="28.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Watering Freq. (Days):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-N1-QgP">
-                                                <rect key="frame" x="28.5" y="96.5" width="162.5" height="28.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Next Watering Due:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzm-L4-TCg">
-                                                <rect key="frame" x="39" y="145" width="141" height="28.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="snd-A8-fHG">
-                                        <rect key="frame" x="219" y="0.0" width="175" height="173.5"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hq9-BH-b6t">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Species" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgR-13-6TB">
-                                                <rect key="frame" x="0.0" y="47" width="175" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="H2O Frequency" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kV-Lo-n9f">
-                                                <rect key="frame" x="0.0" y="94" width="175" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-9E-9ej">
-                                                <rect key="frame" x="0.0" y="141" width="175" height="32.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="175" id="h9o-qe-H9s"/>
-                                        </constraints>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZj-nr-07s">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II7-6l-ifG">
+                                        <rect key="frame" x="0.0" y="54" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H2O Freqency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC7-0P-U7d">
+                                        <rect key="frame" x="0.0" y="87.5" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NextWaterDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-9E-9ej">
+                                        <rect key="frame" x="0.0" y="121" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="5kV-Lo-n9f" firstAttribute="centerY" secondItem="JrG-N1-QgP" secondAttribute="centerY" id="PfP-Xy-fjx"/>
-                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqp-sj-C3G">
-                                <rect key="frame" x="141" y="775" width="132" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-tW-C1E">
-                                <rect key="frame" x="149.5" y="325.5" width="115" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="Add Photo From Library"/>
-                                <connections>
-                                    <action selector="addPhotoFromLibrary:" destination="XIH-UZ-aEH" eventType="touchUpInside" id="h4s-Je-sIm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-yU-Fj2">
-                                <rect key="frame" x="50" y="577" width="314" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-yU-Fj2">
+                                <rect key="frame" x="50" y="539" width="314" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Plant Watered!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flT-Il-Ehy">
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="done" id="RoC-dn-aKT"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cML-AM-TtR"/>
+                                    <barButtonItem systemItem="edit" id="s4r-2Q-RLa"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="e0e-8d-UE2" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="100" id="8UN-Z9-8Mn"/>
-                            <constraint firstItem="Wxh-tW-C1E" firstAttribute="centerX" secondItem="CD3-R9-ZRo" secondAttribute="centerX" id="K00-1c-msy"/>
+                            <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="snd-A8-fHG" secondAttribute="trailing" constant="40" id="FPa-ca-iAx"/>
+                            <constraint firstItem="snd-A8-fHG" firstAttribute="centerX" secondItem="CD3-R9-ZRo" secondAttribute="centerX" id="GCc-42-Hfe"/>
                             <constraint firstItem="e0e-8d-UE2" firstAttribute="top" secondItem="Dxr-ha-nEv" secondAttribute="top" constant="30" id="QNm-Ec-LTM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="flT-Il-Ehy" secondAttribute="bottom" id="UDA-Jx-n8w"/>
                             <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="e0e-8d-UE2" secondAttribute="trailing" constant="100" id="VJe-I8-KTc"/>
-                            <constraint firstItem="ME7-yU-Fj2" firstAttribute="top" secondItem="N66-ob-ZzO" secondAttribute="bottom" constant="8" id="aLE-9a-8ra"/>
-                            <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="N66-ob-ZzO" secondAttribute="trailing" constant="10" id="aiv-G4-ah9"/>
-                            <constraint firstItem="Wxh-tW-C1E" firstAttribute="top" secondItem="e0e-8d-UE2" secondAttribute="bottom" constant="10" id="dKm-bD-3q7"/>
-                            <constraint firstItem="N66-ob-ZzO" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="10" id="gcw-q6-Z3T"/>
                             <constraint firstItem="Dxr-ha-nEv" firstAttribute="trailing" secondItem="ME7-yU-Fj2" secondAttribute="trailing" constant="50" id="hPQ-6h-T30"/>
-                            <constraint firstItem="N66-ob-ZzO" firstAttribute="top" secondItem="e0e-8d-UE2" secondAttribute="bottom" constant="80" id="kWR-Gw-hTT"/>
+                            <constraint firstItem="snd-A8-fHG" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="40" id="pVo-tY-JxC"/>
+                            <constraint firstItem="ME7-yU-Fj2" firstAttribute="top" secondItem="snd-A8-fHG" secondAttribute="bottom" constant="40" id="v2v-LM-imY"/>
                             <constraint firstItem="ME7-yU-Fj2" firstAttribute="leading" secondItem="Dxr-ha-nEv" secondAttribute="leading" constant="50" id="x82-2S-jUq"/>
                             <constraint firstItem="e0e-8d-UE2" firstAttribute="centerX" secondItem="CD3-R9-ZRo" secondAttribute="centerX" id="xIp-Yp-wCM"/>
                         </constraints>
@@ -127,12 +84,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Iq-yf-rjT"/>
                     <connections>
+                        <outlet property="h2oFreqencyLabel" destination="EC7-0P-U7d" id="toj-6e-Ijg"/>
                         <outlet property="nextWateringDateLabel" destination="9H6-9E-9ej" id="mqM-n9-I2w"/>
-                        <outlet property="plantH2oFrequency" destination="5kV-Lo-n9f" id="w8k-EE-p3x"/>
+                        <outlet property="nicknameLabel" destination="DZj-nr-07s" id="iCE-c1-K83"/>
                         <outlet property="plantImageView" destination="e0e-8d-UE2" id="3CH-nj-tXc"/>
-                        <outlet property="plantNicknameTextField" destination="hq9-BH-b6t" id="65H-BW-cN1"/>
-                        <outlet property="plantSpeciesTextField" destination="tgR-13-6TB" id="0F8-Ph-xue"/>
                         <outlet property="plantWateredButton" destination="ME7-yU-Fj2" id="wff-5r-OBR"/>
+                        <outlet property="speciesLabel" destination="II7-6l-ifG" id="cyi-aV-8wR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYN-Pd-Sr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

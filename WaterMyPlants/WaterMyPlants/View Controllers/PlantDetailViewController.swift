@@ -34,10 +34,7 @@ class PlantDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     
     
     // MARK: - Methods

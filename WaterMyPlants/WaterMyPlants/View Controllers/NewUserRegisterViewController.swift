@@ -17,7 +17,6 @@ class NewUserRegisterViewController: UIViewController {
     
     var userController = UserController()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,7 +25,6 @@ class NewUserRegisterViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         // perform login or sign up operation based on loginType
 
-        
         if let username = usernameTextField.text,
             !username.isEmpty,
             let password = passwordTextField.text,
@@ -37,7 +35,6 @@ class NewUserRegisterViewController: UIViewController {
             let user = UserRepresentation(password: password,
                                           phoneNumber: phoneNumber,
                                           username: username)
-            
             
             userController.signUp(with: user) { error in
                 if let error = error {

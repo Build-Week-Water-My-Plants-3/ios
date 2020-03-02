@@ -45,7 +45,7 @@ class PlantController {
         }
         URLSession.shared.dataTask(with: request) { _, _, possibleError in
             guard possibleError == nil else {
-                print("Error PUTing plant to the server: \(possibleError)")
+                print("Error PUTing plant to the server: \(possibleError!)")
                 completion(possibleError)
                 return
             }
@@ -65,7 +65,7 @@ class PlantController {
 
         URLSession.shared.dataTask(with: requestURL) { possibleData, _, possibleError in
             guard possibleError == nil else {
-                print("Error fetching plants: \(possibleError)")
+                print("Error fetching plants: \(possibleError!)")
                 completion(possibleError)
                 return
             }
@@ -82,7 +82,7 @@ class PlantController {
                 var plants: [PlantRepresentation] = []
                 plants = Array(try jsonDecoder.decode([String: PlantRepresentation].self, from: data).values)
 
-                try self.updatePlants(with: plants)
+//                try self.updatePlants(with: plants)
                 self.scheduleNotifications(with: plants)
 
             } catch {
@@ -94,9 +94,10 @@ class PlantController {
     }
 
     // MARK: - Update Core Data
+    // I am temporarily not calling this method because it makes loading on the table view look choppy.  It fetches requests from Core Data and then fetches it from the server and replaces it, making the double-loading on the table view seem goofy.  The downside of not having this called is that if information changes on the server (from a different device) it is  not transferred to core data on this device.
     // Assumes that the data on the server is correct and replaces core data with server data
     func updatePlants(with representations: [PlantRepresentation]) throws {
-        let plantsWithID = representations.filter { $0.identifier != nil }
+        let plantsWithID = representations//.filter { $0.identifier != nil }
         let identifiersToFetch = plantsWithID.compactMap { $0.identifier }
         
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, plantsWithID))
@@ -111,15 +112,15 @@ class PlantController {
                 let existingPlants = try moc.fetch(fetchRequest)
                 
                 for plant in existingPlants {
-                    guard let id = plant.identifier?.uuidString,
-                        let representation = representationsByID[id] else {
+                    guard let plantID = plant.identifier?.uuidString,
+                        let representation = representationsByID[plantID] else {
                             moc.delete(plant)
                             continue
                     }
                     
                     self.update(plant: plant, representation: representation)
                     
-                    plantsToCreate.removeValue(forKey: id)
+                    plantsToCreate.removeValue(forKey: plantID)
                 }
                 
                 for representation in plantsToCreate.values {

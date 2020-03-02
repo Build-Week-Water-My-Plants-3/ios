@@ -62,7 +62,7 @@ class UserController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let jsonEncoder = JSONEncoder()
-        do{
+        do {
             let jsonData = try jsonEncoder.encode(user)
             request.httpBody = jsonData
         } catch {

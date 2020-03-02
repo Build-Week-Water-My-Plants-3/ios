@@ -49,6 +49,9 @@ class PlantController {
                 completion(possibleError)
                 return
             }
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.post(name: .plantSavedToServer, object: nil)
+            
             completion(nil)
         }.resume()
     }

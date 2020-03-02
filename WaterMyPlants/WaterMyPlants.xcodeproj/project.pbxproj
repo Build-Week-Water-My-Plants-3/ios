@@ -29,6 +29,7 @@
 		44C184AB240839B200B69722 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AA240839B200B69722 /* PlantTableViewCell.swift */; };
 		44C184AD2408512200B69722 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AC2408512200B69722 /* DateFormatter.swift */; };
 		44C184B0240C403400B69722 /* EditPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AF240C403400B69722 /* EditPlantViewController.swift */; };
+		44C184B3240C86DC00B69722 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184B2240C86DC00B69722 /* NotificationCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		44C184AA240839B200B69722 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
 		44C184AC2408512200B69722 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		44C184AF240C403400B69722 /* EditPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlantViewController.swift; sourceTree = "<group>"; };
+		44C184B2240C86DC00B69722 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				44C184922407226700B69722 /* UserPlantsVC.swift */,
 				44C184AC2408512200B69722 /* DateFormatter.swift */,
+				44C184B2240C86DC00B69722 /* NotificationCenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				44C1848F240652AD00B69722 /* UserPlantsViewController.swift in Sources */,
 				4414164E2406479C002DD160 /* Bearer.swift in Sources */,
 				44C18496240723DA00B69722 /* UserController.swift in Sources */,
+				44C184B3240C86DC00B69722 /* NotificationCenter.swift in Sources */,
 				44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */,
 				4414163324063DB8002DD160 /* UserSignInViewController.swift in Sources */,
 				4414164824064760002DD160 /* ModelRepresentation.swift in Sources */,

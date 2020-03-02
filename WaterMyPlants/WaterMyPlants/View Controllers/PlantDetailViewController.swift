@@ -29,7 +29,8 @@ class PlantDetailViewController: UIViewController {
     // MARK: - View Control Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        plantWateredButton.layer.cornerRadius = 15
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .plantSavedToServer, object: nil)
         updateViews()
     }
     
@@ -39,23 +40,24 @@ class PlantDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
-    func updateViews() {
-        guard isViewLoaded else { return }
-        
-        plantWateredButton.layer.cornerRadius = 15
-        if let plant = plant {
-            title = plant.nickname
-            if let plantImage = plant.image {
-                
-            } else {
-                plantImageView.image = #imageLiteral(resourceName: "default")
+    @objc func updateViews() {
+        DispatchQueue.main.async {
+            guard self.isViewLoaded else { return }
+            
+            if let plant = self.plant {
+                self.title = plant.nickname
+                if let plantImage = plant.image {
+                    
+                } else {
+                    self.plantImageView.image = #imageLiteral(resourceName: "default")
+                }
+                //            plantImageView.image = plant.image  TODO: all the image stuff
+                self.nicknameLabel.text = plant.nickname
+                self.speciesLabel.text = plant.species
+                self.h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
+                let daysRemaining = self.daysToWateringCalc()
+                self.nextWateringDateLabel.text = daysRemaining
             }
-//            plantImageView.image = plant.image  TODO: all the image stuff
-            nicknameLabel.text = plant.nickname
-            speciesLabel.text = plant.species
-            h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
-            let daysRemaining = daysToWateringCalc()
-            nextWateringDateLabel.text = daysRemaining
         }
     }
     

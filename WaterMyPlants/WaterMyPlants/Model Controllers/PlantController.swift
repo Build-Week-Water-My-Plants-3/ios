@@ -187,9 +187,11 @@ class PlantController {
     
     func scheduleNotifications(with representations: [PlantRepresentation]) {
         let center = UNUserNotificationCenter.current()
-//        center.removeAllPendingNotificationRequests()
+        center.removeAllPendingNotificationRequests()
         
         // Go through each plant and set a notification request for each day a plant needs water
+        var datesWithNotifications: [DateComponents] = []
+        
         for plant in representations {
             var dateComponent = DateComponents()
             let calendar = Calendar.current
@@ -198,17 +200,22 @@ class PlantController {
             
             // Pass the newWaterDate into the notification trigger
             let triggerDate: DateComponents = calendar.dateComponents([.day], from: newWaterDate!)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-            
-            let content = UNMutableNotificationContent()
-            content.title = "Water Plants!"
-            content.body = "You have some plants that are due for watering today."
-            content.categoryIdentifier = "alarm"
-            
-            // TEST
-            let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 45, repeats: false)
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: testTrigger)
-            center.add(request, withCompletionHandler: nil)
+            if datesWithNotifications.contains(triggerDate) {
+                continue
+            } else {
+                datesWithNotifications.append(triggerDate)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Water Plants!"
+                content.body = "You have some plants that are due for watering today."
+                
+                // TEST TRIGGER
+//                            let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                center.add(request, withCompletionHandler: nil)
+            }
         }
     }
 }

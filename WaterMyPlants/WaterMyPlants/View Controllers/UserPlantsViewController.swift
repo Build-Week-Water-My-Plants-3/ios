@@ -43,20 +43,15 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         plantController.fetchPlantsFromServer()
-        // fake data for testing
-//        let newPlant = Plant(nickname: "Audrey2", species: "Venus Fly Trap", h2oFrequency: 1, image: nil)
-//        plantController.put(plant: newPlant)
     }
 }
     // MARK: - Table view data source
 extension UserPlantsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return fetchedResultsController.sections?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
@@ -85,21 +80,6 @@ extension UserPlantsViewController: UITableViewDataSource {
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -111,6 +91,9 @@ extension UserPlantsViewController: UITableViewDataSource {
             if let indexPath = tableView.indexPathForSelectedRow {
             plantDetailVC.plant = fetchedResultsController.object(at: indexPath)
             }
+        } else if segue.identifier == "NewPlantSegue" {
+            guard let newPlantVC = segue.destination as? EditPlantViewController else { return }
+            newPlantVC.plantController = plantController
         }
     }
 }

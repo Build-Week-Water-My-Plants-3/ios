@@ -41,24 +41,23 @@ class PlantDetailViewController: UIViewController {
     
     // MARK: - Methods
     @objc func updateViews() {
-        DispatchQueue.main.async {
-            guard self.isViewLoaded else { return }
+
+            guard isViewLoaded else { return }
             
-            if let plant = self.plant {
-                self.title = plant.nickname
+            if let plant = plant {
+                title = plant.nickname
                 if let plantImage = plant.image {
-                    
+                    plantImageView.image = UIImage(data: plantImage)  // TODO: Get this off the main queue
                 } else {
-                    self.plantImageView.image = #imageLiteral(resourceName: "default")
+                    plantImageView.image = #imageLiteral(resourceName: "default")
                 }
-                //            plantImageView.image = plant.image  TODO: all the image stuff
-                self.nicknameLabel.text = plant.nickname
-                self.speciesLabel.text = plant.species
-                self.h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
-                let daysRemaining = self.daysToWateringCalc()
-                self.nextWateringDateLabel.text = daysRemaining
+                nicknameLabel.text = plant.nickname
+                speciesLabel.text = plant.species
+                h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
+                let daysRemaining = daysToWateringCalc()
+                nextWateringDateLabel.text = daysRemaining
             }
-        }
+        
     }
     
     // TODO: write this function once only

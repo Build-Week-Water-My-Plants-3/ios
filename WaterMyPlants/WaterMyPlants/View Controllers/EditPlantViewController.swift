@@ -11,6 +11,7 @@ import Photos
 
 class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // MARK: - Properties
     var plantController: PlantController?
     var plant: Plant? {
         didSet {
@@ -18,30 +19,26 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
+    // MARK: - Outlets
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var plantNickname: UITextField!
     @IBOutlet weak var plantSpecies: UITextField!
     @IBOutlet weak var plantH2OFrequency: UITextField!
 
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateValues()
     }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-        
-        plantImageView.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
+    
+    // MARK: - Actions
+    // Code to request access to the photo library and add a photo to the plant image.
     @IBAction func addNewPhoto(_ sender: UIButton) {
-        
         let authorizationStatus = PHPhotoLibrary.authorizationStatus()
     
         switch authorizationStatus {
         case .authorized:
             presentImagePickerController()
-            
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { (status) in
                 guard status == .authorized else {
@@ -55,17 +52,6 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         default:
             break
         }
-    }
-    
-    private func presentImagePickerController() {
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
-        
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func saveChanges(_ sender: UIBarButtonItem) {
@@ -116,6 +102,20 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Methods
+    // Image picker controller
+    private func presentImagePickerController() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // Update views puts the appropriate values in the elements if a plant is passed in, otherwise empty text fields await the user
     private func updateValues() {
         guard isViewLoaded else { return }
         
@@ -132,5 +132,13 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         } else {
             title = "Enter New Plant"
         }
+    }
+    
+    // MARK: Image Picker Delegate Method
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        plantImageView.image = image
+        picker.dismiss(animated: true, completion: nil)
     }
 }

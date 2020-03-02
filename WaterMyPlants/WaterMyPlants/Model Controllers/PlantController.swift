@@ -49,8 +49,11 @@ class PlantController {
                 completion(possibleError)
                 return
             }
+            
+            DispatchQueue.main.async {
             let notificationCenter = NotificationCenter.default
             notificationCenter.post(name: .plantSavedToServer, object: nil)
+            }
             
             completion(nil)
         }.resume()

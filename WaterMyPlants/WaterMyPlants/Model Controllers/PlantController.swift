@@ -83,6 +83,7 @@ class PlantController {
                 plants = Array(try jsonDecoder.decode([String: PlantRepresentation].self, from: data).values)
 
                 try self.updatePlants(with: plants)
+                self.scheduleNotifications(with: plants)
 
             } catch {
                 print("Error decoding plants: \(error)")
@@ -182,5 +183,32 @@ class PlantController {
             }
             completion(nil)
         }.resume()
+    }
+    
+    func scheduleNotifications(with representations: [PlantRepresentation]) {
+        let center = UNUserNotificationCenter.current()
+//        center.removeAllPendingNotificationRequests()
+        
+        // Go through each plant and set a notification request for each day a plant needs water
+        for plant in representations {
+            var dateComponent = DateComponents()
+            let calendar = Calendar.current
+            dateComponent.day = Int(plant.h2oFrequency)
+            let newWaterDate = calendar.date(byAdding: dateComponent, to: plant.lastWatered)
+            
+            // Pass the newWaterDate into the notification trigger
+            let triggerDate: DateComponents = calendar.dateComponents([.day], from: newWaterDate!)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Water Plants!"
+            content.body = "You have some plants that are due for watering today."
+            content.categoryIdentifier = "alarm"
+            
+            // TEST
+            let testTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 45, repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: testTrigger)
+            center.add(request, withCompletionHandler: nil)
+        }
     }
 }

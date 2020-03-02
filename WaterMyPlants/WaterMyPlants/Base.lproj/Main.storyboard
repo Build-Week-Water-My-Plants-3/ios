@@ -369,34 +369,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-7p-JnV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-7p-JnV">
                                 <rect key="frame" x="0.0" y="112" width="414" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.19339010079999999" green="0.36460977160000002" blue="0.1690846771" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantCell" rowHeight="120" id="cVo-NU-RIh" customClass="PlantTableViewCell" customModule="WaterMyPlants" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantCell" rowHeight="120" id="cVo-NU-RIh" customClass="PlantTableViewCell" customModule="WaterMyPlants" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVo-NU-RIh" id="tH1-Ca-oTk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-j3-HPN">
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-j3-HPN">
                                                     <rect key="frame" x="20" y="11" width="374" height="98"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-Jq-Qhp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="98"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-Jq-Qhp">
+                                                            <rect key="frame" x="0.0" y="39" width="120" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="wmM-ce-cC3"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UyY-vu-XUd">
-                                                            <rect key="frame" x="131" y="0.0" width="73.5" height="98"/>
+                                                            <rect key="frame" x="140" y="0.0" width="73.5" height="98"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="98" id="KAC-uo-cRE"/>
                                                                 <constraint firstAttribute="width" secondItem="UyY-vu-XUd" secondAttribute="height" multiplier="3:4" id="lUI-Kb-u0l"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDL-ID-mTF">
-                                                            <rect key="frame" x="262.5" y="0.0" width="111.5" height="98"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GDL-ID-mTF">
+                                                            <rect key="frame" x="233.5" y="39" width="140.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -411,6 +416,7 @@
                                                 <constraint firstItem="AbP-j3-HPN" firstAttribute="top" secondItem="tH1-Ca-oTk" secondAttribute="topMargin" id="qIg-gX-3AR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="daysToNextWatering" destination="GDL-ID-mTF" id="HN9-Jt-NUy"/>
                                             <outlet property="plantImage" destination="UyY-vu-XUd" id="oMB-Sg-szP"/>
@@ -432,7 +438,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="k9R-7p-JnV" firstAttribute="trailing" secondItem="HK1-rW-v3W" secondAttribute="trailing" id="LVv-10-Sj8"/>
-                            <constraint firstItem="k9R-7p-JnV" firstAttribute="top" secondItem="TeE-Do-yp8" secondAttribute="bottom" symbolic="YES" id="NKd-WV-Iky"/>
+                            <constraint firstItem="k9R-7p-JnV" firstAttribute="top" secondItem="TeE-Do-yp8" secondAttribute="bottom" id="NKd-WV-Iky"/>
                             <constraint firstItem="TeE-Do-yp8" firstAttribute="top" secondItem="HK1-rW-v3W" secondAttribute="top" id="Xjw-C0-AgQ"/>
                             <constraint firstItem="TeE-Do-yp8" firstAttribute="leading" secondItem="HK1-rW-v3W" secondAttribute="leading" id="YtF-nq-Tc9"/>
                             <constraint firstItem="k9R-7p-JnV" firstAttribute="leading" secondItem="HK1-rW-v3W" secondAttribute="leading" id="mwp-5l-Arg"/>
@@ -572,7 +578,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="kVh-lf-N6K" kind="presentation" identifier="SignInSegue" id="XnS-YF-8Hl"/>
+                                    <segue destination="kVh-lf-N6K" kind="show" identifier="SignInSegue" id="XnS-YF-8Hl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water My Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-8K-hhb">
@@ -762,6 +768,9 @@
                                 <rect key="frame" x="129.5" y="323.5" width="155" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Choose Photo From Library"/>
+                                <connections>
+                                    <action selector="addNewPhoto:" destination="0ou-HH-HiK" eventType="touchUpInside" id="diZ-Mh-0kY"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="6NY-o9-ebR">
                                 <rect key="frame" x="40" y="355.5" width="334" height="143"/>

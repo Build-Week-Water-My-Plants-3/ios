@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class EditPlantViewController: UIViewController {
+class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var plantController: PlantController?
     var plant: Plant? {
@@ -21,15 +22,52 @@ class EditPlantViewController: UIViewController {
     @IBOutlet weak var plantNickname: UITextField!
     @IBOutlet weak var plantSpecies: UITextField!
     @IBOutlet weak var plantH2OFrequency: UITextField!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateValues()
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        plantImageView.image = image
+        picker.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func addNewPhoto(_ sender: UIButton) {
+        
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
     
-    // TODO: Need to add delegate so plant detail VC can update itself when edits are made to an existing plant.
+        switch authorizationStatus {
+        case .authorized:
+            presentImagePickerController()
+            
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (status) in
+                guard status == .authorized else {
+                    NSLog("User did not authorize access to the photo library")
+                    return
+                }
+                DispatchQueue.main.async {
+                self.presentImagePickerController()
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    private func presentImagePickerController() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func saveChanges(_ sender: UIBarButtonItem) {
         guard let plantController = plantController,
             let nickname = plantNickname.text,
@@ -49,7 +87,9 @@ class EditPlantViewController: UIViewController {
             
             plantController.updateExistingPlant(for: plant)
             
-            let alertController = UIAlertController(title: "Plant Updated", message: "The plant information was successfully updated.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Plant Updated",
+                                                    message: "The plant information was successfully updated.",
+                                                    preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
                 self.dismiss(animated: true, completion: nil)
             }
@@ -71,7 +111,6 @@ class EditPlantViewController: UIViewController {
             self.present(alertController, animated: true)
         }
     }
-    
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

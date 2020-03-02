@@ -111,6 +111,9 @@ extension UserPlantsViewController: UITableViewDataSource {
             if let indexPath = tableView.indexPathForSelectedRow {
             plantDetailVC.plant = fetchedResultsController.object(at: indexPath)
             }
+        } else if segue.identifier == "NewPlantSegue" {
+            guard let newPlantVC = segue.destination as? EditPlantViewController else { return }
+            newPlantVC.plantController = plantController
         }
     }
 }

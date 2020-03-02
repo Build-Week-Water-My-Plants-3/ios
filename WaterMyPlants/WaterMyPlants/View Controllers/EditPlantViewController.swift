@@ -62,21 +62,16 @@ class EditPlantViewController: UIViewController {
             // I think right here is where we assign the plant to the user.
             // something like newPlant.user = userController.user
             
-            plantController.put(plant: newPlant) { error in
-                guard let error = error else {
-                    print("Error occurred PUTing new plant to server")
-                    return }
-                DispatchQueue.main.async {
-                    let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    alertController.addAction(alertAction)
-                    self.present(alertController, animated: true)
-                }
+            plantController.put(plant: newPlant)
+            let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                self.dismiss(animated: true, completion: nil)
             }
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
         }
     }
+    
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

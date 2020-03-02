@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
@@ -42,6 +43,7 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerLocal()
         plantController.fetchPlantsFromServer()
     }
 }
@@ -94,6 +96,19 @@ extension UserPlantsViewController: UITableViewDataSource {
         } else if segue.identifier == "NewPlantSegue" {
             guard let newPlantVC = segue.destination as? EditPlantViewController else { return }
             newPlantVC.plantController = plantController
+        }
+    }
+    
+    // MARK: - Notification Center
+    @objc func registerLocal() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert]) { grantedBool, possibleError in
+            if grantedBool {
+                print("Permission Granted")
+            } else {
+                print("Permission Denied")
+            }
         }
     }
 }

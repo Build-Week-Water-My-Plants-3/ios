@@ -52,8 +52,4 @@ class UserSignInViewController: UIViewController {
                 }
             }
         }
-        
     }
-    
-
-

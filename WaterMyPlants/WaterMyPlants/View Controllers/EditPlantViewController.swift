@@ -135,7 +135,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     // MARK: Image Picker Delegate Method
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         
         plantImageView.image = image

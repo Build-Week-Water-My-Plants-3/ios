@@ -60,6 +60,4 @@ class PlantTableViewCell: UITableViewCell {
             return "Watering is past due!"
         }
     }
-    
-
 }

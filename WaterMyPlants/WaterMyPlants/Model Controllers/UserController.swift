@@ -15,39 +15,98 @@ class UserController {
     private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/user")!
     
     var bearer: Bearer?
-    var match: Bool = false
+    var passwordMatch: Bool = false
+    var usernameMatch: Bool = false
     
     
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-        let registerUserURL = baseURL.appendingPathComponent(user.username).appendingPathExtension("json")
-        var request = URLRequest(url: registerUserURL)
-        request.httpMethod = HTTPMethod.put.rawValue
+//        let registerUserURL = baseURL
+//            .appendingPathComponent(user.username)
+//            .appendingPathExtension("json")
+//        var request = URLRequest(url: registerUserURL)
+//        request.httpMethod = HTTPMethod.put.rawValue
         
-//        request.setValue("application/json", forHTTPHeaderField: "content-Type")
-//        let jsonEncoder = JSONEncoder()
+//        do {
+//            request.httpBody = try JSONEncoder().encode(user)
+//        } catch {
+//            print("Error encoding user object: \(error)")
+//            completion(error)
+//            return
+//        }
+//        URLSession.shared.dataTask(with: request) { _, _, error in
+//            if let error = error {
+//                completion(error)
+//                return
+//            }
+//            completion(nil)
+//        }.resume()
         
-        do {
-            request.httpBody = try JSONEncoder().encode(user)
-        } catch {
-            print("Error encoding user object: \(error)")
-            completion(error)
-            return
-        }
+        let getUserURL = baseURL
+            .appendingPathComponent(user.username)
+            .appendingPathComponent("username")
+            .appendingPathExtension("json")
+        var getUserRequest = URLRequest(url: getUserURL)
+        getUserRequest.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: request) { _, _, error in
+        URLSession.shared.dataTask(with: getUserRequest) { data, response, error in
+            
             if let error = error {
                 completion(error)
                 return
             }
-//            if let response = response as? HTTPURLResponse,
-//                response.statusCode != 200 {
-//                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
-//                return
-//            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                return
+            }
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
             
+            let decoder = JSONDecoder()
+            do {
+                let username = try decoder.decode(String.self, from: data)
+                
+                if user.username == username {
+                    print("\(username) already exists")
+                    self.usernameMatch = true
+                } else {
+                    print("\(user.username) does not exist")
+                    self.usernameMatch = false
+                }
+                
+                
+            } catch {
+                print("Username \(user.username) does not exist or there was an error docoding username: \(error)")
+                
+                let registerUserURL = self.baseURL
+                            .appendingPathComponent(user.username)
+                            .appendingPathExtension("json")
+                        var request = URLRequest(url: registerUserURL)
+                        request.httpMethod = HTTPMethod.put.rawValue
+                do {
+                            request.httpBody = try JSONEncoder().encode(user)
+                        } catch {
+                            print("Error encoding user object: \(error)")
+                            completion(error)
+                            return
+                        }
+                        URLSession.shared.dataTask(with: request) { _, _, error in
+                            if let error = error {
+                                completion(error)
+                                return
+                            }
+                            completion(nil)
+                        }.resume()
+                completion(error)
+                return
+            }
             completion(nil)
         }.resume()
+        
+        
     }
     
     // MARK: - Log In Existing User
@@ -61,6 +120,7 @@ class UserController {
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.get.rawValue
 
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
            
             if let error = error {
@@ -88,10 +148,10 @@ class UserController {
                 
                 if user.password == password {
                     print("We HAVE a match!!!!!!!!!!!!")
-                    self.match = true
+                    self.passwordMatch = true
                 } else {
                     print("We DON'T have a match!!!!!!!!!!!!")
-                    self.match = false
+                    self.passwordMatch = false
                 }
                 
             } catch {

@@ -15,10 +15,10 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     var plantController = PlantController()
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
+        let searchText = searchBar.text
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
-        fetchRequest.sortDescriptors = [
-        NSSortDescriptor(key: "species", ascending: true)
-        ]
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "species", ascending: true)]
+        
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
@@ -36,10 +36,22 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
             searchBar.delegate = self
         }
     }
-    
-    /*  for use with possible implementation of a search bar
-    var currentSearchText = ""
-    */
+    // MARK: - Search Bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var predicate: NSPredicate? = nil
+        if searchText != "" {
+            predicate = NSPredicate(format: "(nickname contains[cd] %@) OR (species contains[cd] %@)", searchText, searchText)
+        }
+        
+        fetchedResultsController.fetchRequest.predicate = predicate
+        
+        do {
+            try fetchedResultsController.performFetch()
+            tableView.reloadData()
+        } catch  {
+            print("Fetch Failed!")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +117,7 @@ extension UserPlantsViewController: UITableViewDataSource {
         
         center.requestAuthorization(options: [.alert]) { grantedBool, possibleError in
             guard possibleError != nil else {
-                print("Error in Notification Center Authorization: \(possibleError!)")
+                print("Error in Notification Center Authorization: \(possibleError)")
                 return
             }
             if grantedBool {

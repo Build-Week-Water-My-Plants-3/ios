@@ -59,8 +59,8 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerLocal()
-        user = User(password: "password", phoneNumber: "5558889999", username: "bob", context: CoreDataStack.shared.mainContext)
-        plantController.fetchPlantsFromServer()
+        user = User(password: "password", phoneNumber: "5558889999", username: "chuck", context: CoreDataStack.shared.mainContext)
+        plantController.fetchPlantsFromServer(user: user!)
     }
 }
     // MARK: - Table view data source
@@ -121,11 +121,7 @@ extension UserPlantsViewController: UITableViewDataSource {
     @objc func registerLocal() {
         let center = UNUserNotificationCenter.current()
         
-        center.requestAuthorization(options: [.alert]) { grantedBool, possibleError in
-            guard possibleError != nil else {
-                print("Error in Notification Center Authorization: \(possibleError)")
-                return
-            }
+        center.requestAuthorization(options: [.alert]) { grantedBool, _ in
             if grantedBool {
                 print("Permission Granted")
             } else {

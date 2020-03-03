@@ -62,8 +62,8 @@ class PlantController {
     }
 
     // MARK: - Fetch Plant From Server
-    func fetchPlantsFromServer(completion: @escaping (Error?) -> Void = {_ in }) {
-        let requestURL = baseURL.appendingPathExtension("json")
+    func fetchPlantsFromServer(user: User, completion: @escaping (Error?) -> Void = {_ in }) {
+        let requestURL = baseURL.appendingPathComponent(user.username!).appendingPathExtension("json")
 
         URLSession.shared.dataTask(with: requestURL) { possibleData, _, possibleError in
             guard possibleError == nil else {
@@ -84,7 +84,7 @@ class PlantController {
                 var plants: [PlantRepresentation] = []
                 plants = Array(try jsonDecoder.decode([String: PlantRepresentation].self, from: data).values)
 
-//                try self.updatePlants(with: plants)
+                try self.updatePlants(with: plants)
                 self.scheduleNotifications(with: plants)
 
             } catch {
@@ -148,11 +148,11 @@ class PlantController {
     // Called from detail view controller when making changes
     func updateExistingPlant(for plant: Plant) {
         put(plant: plant)
-        do {
-            try CoreDataStack.shared.save()
-        } catch {
-            print("Error updating existing plant")
-        }
+//        do {
+//            try CoreDataStack.shared.save()
+//        } catch {
+//            print("Error updating existing plant")
+//        }
     }
     
     // MARK: - Delete Existing Plant
@@ -169,12 +169,13 @@ class PlantController {
     }
     
     func deletePlantFromServer(_ plant: Plant, completion: @escaping (Error?) -> Void = {_ in }) {
-        guard let identifier = plant.identifier else {
+        guard let identifier = plant.identifier,
+            let username = plant.user?.username else {
             completion(NSError())
             return
         }
         
-        let requestURL = baseURL.appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
+        let requestURL = baseURL.appendingPathComponent(username).appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
         

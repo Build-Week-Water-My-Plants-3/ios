@@ -29,6 +29,9 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         updateValues()
+        let tap = UITapGestureRecognizer(target: self.view,
+                                         action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: - Actions
@@ -141,4 +144,6 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         plantImageView.image = image
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    
 }

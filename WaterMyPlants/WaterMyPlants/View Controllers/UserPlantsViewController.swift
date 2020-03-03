@@ -105,7 +105,7 @@ extension UserPlantsViewController: UITableViewDataSource {
         
         center.requestAuthorization(options: [.alert]) { grantedBool, possibleError in
             guard possibleError != nil else {
-                print("Error in Notification Center Authorization: \(possibleError!)")
+                print("Error in Notification Center Authorization: \(possibleError)")
                 return
             }
             if grantedBool {

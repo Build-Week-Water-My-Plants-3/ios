@@ -19,6 +19,7 @@
 		4414164A24064770002DD160 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164924064770002DD160 /* User+Convenience.swift */; };
 		4414164C2406477E002DD160 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164B2406477E002DD160 /* Plant+Convenience.swift */; };
 		4414164E2406479C002DD160 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414164D2406479C002DD160 /* Bearer.swift */; };
+		4442F0B1240EAADA0018559E /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0B0240EAADA0018559E /* LandingScreen.swift */; };
 		44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */; };
 		44C1848D2406528C00B69722 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848C2406528C00B69722 /* PlantDetailViewController.swift */; };
 		44C1848F240652AD00B69722 /* UserPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848E240652AD00B69722 /* UserPlantsViewController.swift */; };
@@ -47,6 +48,7 @@
 		4414164924064770002DD160 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		4414164B2406477E002DD160 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		4414164D2406479C002DD160 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		4442F0B0240EAADA0018559E /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
 		44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserRegisterViewController.swift; sourceTree = "<group>"; };
 		44C1848C2406528C00B69722 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		44C1848E240652AD00B69722 /* UserPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlantsViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		44C18490240652B900B69722 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4442F0B0240EAADA0018559E /* LandingScreen.swift */,
 				4414163224063DB8002DD160 /* UserSignInViewController.swift */,
 				44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */,
 				44C1848C2406528C00B69722 /* PlantDetailViewController.swift */,
@@ -257,6 +260,7 @@
 				44C1848F240652AD00B69722 /* UserPlantsViewController.swift in Sources */,
 				4414164E2406479C002DD160 /* Bearer.swift in Sources */,
 				44C18496240723DA00B69722 /* UserController.swift in Sources */,
+				4442F0B1240EAADA0018559E /* LandingScreen.swift in Sources */,
 				44C184B3240C86DC00B69722 /* NotificationCenter.swift in Sources */,
 				44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */,
 				4414163324063DB8002DD160 /* UserSignInViewController.swift in Sources */,

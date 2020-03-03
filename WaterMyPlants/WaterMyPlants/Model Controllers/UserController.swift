@@ -12,25 +12,23 @@ import CoreData
 
 class UserController {
     // Linking to firebase database for testing networking code
-    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/")!
+    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/user")!
     
     var bearer: Bearer?
+    var match: Bool = false
+    
     
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-        // get and change endpoint!!!
         let registerUserURL = baseURL.appendingPathComponent(user.username).appendingPathExtension("json")
         var request = URLRequest(url: registerUserURL)
         request.httpMethod = HTTPMethod.put.rawValue
         
-        // get and change endpoints!!!
 //        request.setValue("application/json", forHTTPHeaderField: "content-Type")
-        
 //        let jsonEncoder = JSONEncoder()
+        
         do {
-//            let jsonData = try jsonEncoder.encode(user)
             request.httpBody = try JSONEncoder().encode(user)
-//            request.httpBody = jsonData
         } catch {
             print("Error encoding user object: \(error)")
             completion(error)
@@ -47,49 +45,57 @@ class UserController {
 //                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
 //                return
 //            }
+            
             completion(nil)
         }.resume()
     }
     
     // MARK: - Log In Existing User
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-        // get and change endpoints!!!
+
         let logInURL = baseURL
+            .appendingPathComponent(user.username)
+            .appendingPathComponent("password")
+            .appendingPathExtension("json")
         
         var request = URLRequest(url: logInURL)
-        request.httpMethod = HTTPMethod.post.rawValue
-        // get and change endpoints!!!
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(user)
-            request.httpBody = jsonData
-        } catch {
-            print("Error encoding user object: \(error)")
-            completion(error)
-            return
-        }
-        
+        request.httpMethod = HTTPMethod.get.rawValue
+
         URLSession.shared.dataTask(with: request) { data, response, error in
+           
             if let error = error {
                 completion(error)
                 return
             }
+            
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
+            
             guard let data = data else {
                 completion(NSError())
                 return
             }
+            
             let decoder = JSONDecoder()
+            
             do {
-                self.bearer = try decoder.decode(Bearer.self, from: data)
+                let password = try decoder.decode(String.self, from: data)
+                print("firebase password: \(password)")
+                print("text field password: \(user.password)")
+                
+                if user.password == password {
+                    print("We HAVE a match!!!!!!!!!!!!")
+                    self.match = true
+                } else {
+                    print("We DON'T have a match!!!!!!!!!!!!")
+                    self.match = false
+                }
+                
             } catch {
-                print("Erorr decoding bearer object: \(error)")
+                print("Erorr decoding password object: \(error)")
                 completion(error)
                 return
             }

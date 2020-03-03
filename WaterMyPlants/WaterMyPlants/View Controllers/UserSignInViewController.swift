@@ -17,12 +17,9 @@ class UserSignInViewController: UIViewController {
     
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
-//    @IBOutlet private weak var phoneNumberTextField: UITextField!
-    @IBOutlet private weak var loginTypeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var signInButton: UIButton!
     
-    var userController: UserController?
-//    var loginType = LoginType.signUp
+    var userController =  UserController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +27,7 @@ class UserSignInViewController: UIViewController {
     
     // MARK: - Action Handlers
     @IBAction func buttonTapped(_ sender: UIButton) {
-        // perform login or sign up operation based on loginType
-        guard let userController = userController else { return }
+        
         let phoneNumber = ""
         if let username = usernameTextField.text,
             !username.isEmpty,
@@ -40,16 +36,55 @@ class UserSignInViewController: UIViewController {
             let user = UserRepresentation(password: password,
                                           phoneNumber: phoneNumber,
                                           username: username)
-                //run sign in API call
-                userController.signIn(with: user) { error in
-                    if let error = error {
-                        print("Error occurred during sign up: \(error)")
-                    } else {
-                        DispatchQueue.main.async {
-                            self.dismiss(animated: true, completion: nil)
-                        }
+            //run sign in API call
+            userController.signIn(with: user) { error in
+                
+                if let error = error {
+                    print("Error occurred during sign up: \(error)")
+                }
+                
+                if self.userController.match == true {
+                    print("true")
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "PlantSegue", sender: self)
+                    }
+                } else {
+                    print("false")
+                    DispatchQueue.main.async {
+                        self.usernameTextField.text = ""
+                        self.passwordTextField.text = ""
+                    
+                        let alertController = UIAlertController(
+                            title: "Sign In UnSuccessfull",
+                            message: "Incorrect Password.",
+                            preferredStyle: .alert)
+                        
+                        let alertAction = UIAlertAction(
+                            title: "OK",
+                            style: UIAlertAction.Style.default,
+                            handler: nil)
+                        
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true, completion: nil)
                     }
                 }
+                
             }
+            
         }
     }
+
+
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "plantSegue" {
+//            // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
+//            if let loginVC = segue.destination as? UserPlantsViewController {
+//                loginVC.userController = userController
+//          
+//            }
+//        }
+//    }
+
+
+}

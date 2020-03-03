@@ -12,6 +12,7 @@ class PlantDetailViewController: UIViewController {
     
     // MARK: - Properties
     var plantController: PlantController?
+    var user: User?
     var plant: Plant? {
         didSet {
             updateViews()
@@ -101,6 +102,7 @@ class PlantDetailViewController: UIViewController {
             
             editPlantVC.plant = plant
             editPlantVC.plantController = plantController
+            editPlantVC.user = user
         }
     }
 }

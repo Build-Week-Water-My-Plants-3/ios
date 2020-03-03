@@ -13,6 +13,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     
     // MARK: - Properties
     var plantController: PlantController?
+    var user: User?
     var plant: Plant? {
         didSet {
             updateValues()
@@ -91,7 +92,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
             let newPlant = Plant(nickname: nickname, species: species, h2oFrequency: Int(h2oFrequencyInt), image: plantImageData)
             
             // I think right here is where we assign the plant to the user.
-            // something like newPlant.user = userController.user
+             newPlant.user = user
             
             plantController.put(plant: newPlant)
             let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)

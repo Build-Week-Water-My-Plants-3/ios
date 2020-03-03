@@ -38,6 +38,12 @@ class PlantController {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.dateEncodingStrategy = .iso8601
             request.httpBody = try jsonEncoder.encode(representation)
+            
+            DispatchQueue.main.async {
+                let notificationCenter = NotificationCenter.default
+                notificationCenter.post(name: .plantSavedToServer, object: nil)
+            }
+            
         } catch {
             print("Error encoding task \(error)")
             completion(error)
@@ -48,11 +54,6 @@ class PlantController {
                 print("Error PUTing plant to the server: \(possibleError!)")
                 completion(possibleError)
                 return
-            }
-            
-            DispatchQueue.main.async {
-            let notificationCenter = NotificationCenter.default
-            notificationCenter.post(name: .plantSavedToServer, object: nil)
             }
             
             completion(nil)

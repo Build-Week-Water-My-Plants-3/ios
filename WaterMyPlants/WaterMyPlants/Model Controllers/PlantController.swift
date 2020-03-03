@@ -17,8 +17,9 @@ class PlantController {
     
     // MARK: - Put Plant to Server
     func put(plant: Plant, completion: @escaping (Error?) -> Void = {_ in }) {
-        guard let identifier = plant.identifier else { return }
-        let requestURL = baseURL.appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
+        guard let identifier = plant.identifier,
+            let username = plant.user?.username else { return }
+        let requestURL = baseURL.appendingPathComponent(username).appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.put.rawValue
 

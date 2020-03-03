@@ -12,7 +12,9 @@ import UserNotifications
 
 class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
+    // MARK: - Properties
     var plantController = PlantController()
+    var user: User?
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let searchText = searchBar.text
@@ -53,9 +55,11 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerLocal()
+        user = User(password: "password", phoneNumber: "5558889999", username: "bob", context: CoreDataStack.shared.mainContext)
         plantController.fetchPlantsFromServer()
     }
 }
@@ -101,6 +105,7 @@ extension UserPlantsViewController: UITableViewDataSource {
         if segue.identifier == "PlantDetailSegue" {
             guard let plantDetailVC = segue.destination as? PlantDetailViewController else { return }
             plantDetailVC.plantController = plantController
+            plantDetailVC.user = user
             
             if let indexPath = tableView.indexPathForSelectedRow {
             plantDetailVC.plant = fetchedResultsController.object(at: indexPath)
@@ -108,6 +113,7 @@ extension UserPlantsViewController: UITableViewDataSource {
         } else if segue.identifier == "NewPlantSegue" {
             guard let newPlantVC = segue.destination as? EditPlantViewController else { return }
             newPlantVC.plantController = plantController
+            newPlantVC.user = user
         }
     }
     

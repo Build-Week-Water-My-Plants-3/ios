@@ -19,6 +19,10 @@ class NewUserRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signUpButton.layer.cornerRadius = 10
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
     }
     
     // MARK: - Action Handlers

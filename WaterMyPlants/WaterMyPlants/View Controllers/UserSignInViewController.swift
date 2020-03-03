@@ -8,11 +8,6 @@
 
 import UIKit
 
-//enum LoginType {
-//    case signUp
-//    case signIn
-//}
-
 class UserSignInViewController: UIViewController {
     
     @IBOutlet private weak var usernameTextField: UITextField!
@@ -23,6 +18,10 @@ class UserSignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signInButton.layer.cornerRadius = 10
+        signInButton.layer.borderWidth = 1
+        signInButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
     }
     
     // MARK: - Action Handlers
@@ -77,10 +76,10 @@ class UserSignInViewController: UIViewController {
 
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "plantSegue" {
+//        if segue.identifier == "PlantSegue" {
 //            // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
-//            if let loginVC = segue.destination as? UserPlantsViewController {
-//                loginVC.userController = userController
+//            if let plantUserVC = segue.destination as? UserPlantsViewController {
+//                plantUserVC.userController = userController
 //          
 //            }
 //        }

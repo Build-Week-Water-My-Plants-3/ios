@@ -39,6 +39,22 @@ class PlantDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func updateLastWateredDate(_ sender: UIButton) {
+        guard let plant = plant,
+        let plantController = plantController else { return }
+        let lastWatered = Date()
+        plant.lastWatered = lastWatered
+        
+        plantController.updateExistingPlant(for: plant)
+        
+        let alertController = UIAlertController(title: "Plant Watered!",
+                                                message: "You watered your plant today! Next watering date has been updated.",
+                                                preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true)
+    }
+    
     // MARK: - Methods
     @objc func updateViews() {
 

@@ -56,6 +56,9 @@
                                 <state key="normal" title="Tap After Watering Plant!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateLastWateredDate:" destination="XIH-UZ-aEH" eventType="touchUpInside" id="s39-77-rQr"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-Il-Ehy">
                                 <rect key="frame" x="0.0" y="759" width="414" height="49"/>
@@ -847,7 +850,7 @@
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YCB-GF-lB7"/>
+        <segue reference="cCs-G1-cHE"/>
         <segue reference="glq-ax-oqy"/>
         <segue reference="0cU-BS-AqF"/>
     </inferredMetricsTieBreakers>

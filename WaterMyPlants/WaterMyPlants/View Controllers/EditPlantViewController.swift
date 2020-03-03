@@ -68,6 +68,8 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
             !species.isEmpty else { return }
         let plantImageData = plantImageView?.image?.pngData()
         
+        // If an existing Plant was passed into the function, get the new values and call updateExistingPlant
+        // else, get the values and call the put method.  Also, assign the plant to a user in core data.
         if let plant = plant {
             plant.nickname = nickname
             plant.species = species

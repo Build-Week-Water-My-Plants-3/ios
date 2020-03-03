@@ -42,9 +42,11 @@ class UserSignInViewController: UIViewController {
                     print("Error occurred during sign up: \(error)")
                 }
                 
-                if self.userController.match == true {
+                if self.userController.passwordMatch == true {
                     print("true")
                     DispatchQueue.main.async {
+                        self.usernameTextField.text = ""
+                        self.passwordTextField.text = ""
                         self.performSegue(withIdentifier: "PlantSegue", sender: self)
                     }
                 } else {

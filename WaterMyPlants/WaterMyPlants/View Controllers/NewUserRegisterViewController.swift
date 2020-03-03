@@ -28,7 +28,7 @@ class NewUserRegisterViewController: UIViewController {
     // MARK: - Action Handlers
     @IBAction func buttonTapped(_ sender: UIButton) {
         // perform login or sign up operation based on loginType
-
+        
         if let username = usernameTextField.text,
             !username.isEmpty,
             let password = passwordTextField.text,
@@ -41,30 +41,85 @@ class NewUserRegisterViewController: UIViewController {
                                           username: username)
             
             userController.signUp(with: user) { error in
+                
                 if let error = error {
-                    print("Error occured during sign up: \(error)")
-                } else {
-                    /// perform sign in api call that is on the main thread because its a UI call
                     DispatchQueue.main.async {
-                        /// alert window
                         let alertController = UIAlertController(
                             title: "Sign Up Successfull",
                             message: "Now please log in.",
                             preferredStyle: .alert)
-                        /// alert button
                         let alertAction = UIAlertAction(
                             title: "OK",
                             style: UIAlertAction.Style.default,
                             handler: { action -> Void in
                                 self.performSegue(withIdentifier: "SignInSegue", sender: self)
                         })
-                        /// adding action to alert controller
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true)
+                        self.usernameTextField.text = ""
+                        self.passwordTextField.text = ""
+                        self.phoneNumberTextField.text = ""
+                    }
+                    print("Error occured during sign up: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.usernameTextField.text = ""
+                        self.passwordTextField.text = ""
+                        self.phoneNumberTextField.text = ""
+                        
+                        let alertController = UIAlertController(
+                            title: "Sign Up not Successfull",
+                            message: "Username already exists, please try again.",
+                            preferredStyle: .alert)
+                        let alertAction = UIAlertAction(
+                            title: "OK",
+                            style: UIAlertAction.Style.default,
+                            handler: nil)
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
                         
                     }
+                    
+                    //                if self.userController.usernameMatch == true {
+                    //                    /// perform sign in api call that is on the main thread because its a UI call
+                    //                    DispatchQueue.main.async {
+                    //                        /// alert window
+                    //                        let alertController = UIAlertController(
+                    //                            title: "Sign Up Successfull",
+                    //                            message: "Now please log in.",
+                    //                            preferredStyle: .alert)
+                    //                        /// alert button
+                    //                        let alertAction = UIAlertAction(
+                    //                            title: "OK",
+                    //                            style: UIAlertAction.Style.default,
+                    //                            handler: { action -> Void in
+                    //                                self.performSegue(withIdentifier: "SignInSegue", sender: self)
+                    //                        })
+                    //                        /// adding action to alert controller
+                    //                        alertController.addAction(alertAction)
+                    //                        self.present(alertController, animated: true)
+                    //
+                    //                    }
+                    //                } else {
+                    //                    DispatchQueue.main.async {
+                    //                        /// alert window
+                    //                        let alertController = UIAlertController(
+                    //                            title: "Sign Up Not Successfull",
+                    //                            message: "Username already exists.",
+                    //                            preferredStyle: .alert)
+                    //                        /// alert button
+                    //                        let alertAction = UIAlertAction(
+                    //                            title: "OK",
+                    //                            style: UIAlertAction.Style.default,
+                    //                            handler: nil)
+                    //                        /// adding action to alert controller
+                    //                        alertController.addAction(alertAction)
+                    //                        self.present(alertController, animated: true)
+                    //
                 }
             }
+            
         }
     }
 }
+

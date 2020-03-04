@@ -106,13 +106,20 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
             // I think right here is where we assign the plant to the user.
              newPlant.user = user
             
-            plantController.put(plant: newPlant)
-            let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
-                self.dismiss(animated: true, completion: nil)
+            plantController.put(plant: newPlant) { error in
+                if error != nil {
+                    print("Error occured while PUTing new plant to server: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true)
+                    }
+                }
             }
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true)
         }
     }
     

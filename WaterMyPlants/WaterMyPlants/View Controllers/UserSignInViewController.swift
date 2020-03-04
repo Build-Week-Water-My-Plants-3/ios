@@ -15,6 +15,7 @@ class UserSignInViewController: UIViewController {
     @IBOutlet private weak var signInButton: UIButton!
     
     var userController =  UserController()
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class UserSignInViewController: UIViewController {
             let user = UserRepresentation(password: password,
                                           phoneNumber: phoneNumber,
                                           username: username)
+            currentUser = User(password: password, phoneNumber: phoneNumber, username: username)
             //run sign in API call
             userController.signIn(with: user) { error in
                 
@@ -75,17 +77,13 @@ class UserSignInViewController: UIViewController {
         }
     }
 
-
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "PlantSegue" {
-//            // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
-//            if let plantUserVC = segue.destination as? UserPlantsViewController {
-//                plantUserVC.userController = userController
-//          
-//            }
-//        }
-//    }
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PlantSegue" {
+            // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
+            if let plantUserVC = segue.destination as? UserPlantsViewController {
+                plantUserVC.user = currentUser
+          
+            }
+        }
+    }
 }

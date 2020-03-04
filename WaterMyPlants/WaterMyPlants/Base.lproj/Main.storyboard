@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYN-Pd-Sr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4265" y="1961"/>
+            <point key="canvasLocation" x="5173.913043478261" y="1960.7142857142856"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1TX-VK-NW5">
@@ -239,11 +239,11 @@
             <objects>
                 <viewController id="py2-8r-EYr" customClass="UserPlantsViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8br-iF-aNX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-7p-JnV">
-                                <rect key="frame" x="0.0" y="112" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.19339010079999999" green="0.36460977160000002" blue="0.1690846771" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -304,7 +304,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-Do-yp8">
-                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -339,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSO-SA-nyP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3461" y="1961"/>
+            <point key="canvasLocation" x="4371.0144927536239" y="1960.7142857142856"/>
         </scene>
         <!--User Sign In View Controller-->
         <scene sceneID="UkG-Xa-djT">
@@ -410,14 +410,14 @@
                         <outlet property="passwordTextField" destination="LX0-9r-hUD" id="jv9-LW-QBB"/>
                         <outlet property="signInButton" destination="38u-tA-uQX" id="TsI-Hu-h9O"/>
                         <outlet property="usernameTextField" destination="ueP-U1-5yx" id="pyy-xx-I9t"/>
-                        <segue destination="Bw5-pW-AKE" kind="show" identifier="PlantSegue" id="2dI-aw-d4U"/>
+                        <segue destination="py2-8r-EYr" kind="show" identifier="PlantSegue" id="mdL-s8-ISf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-ib-UIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913" y="2735"/>
         </scene>
-        <!--Landing Screen-->
+        <!--Water My Plants-->
         <scene sceneID="Qjc-1d-rcI">
             <objects>
                 <viewController id="QYu-aU-LUK" customClass="LandingScreen" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
@@ -447,7 +447,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mock3" translatesAutoresizingMaskIntoConstraints="NO" id="IEC-dJ-jco">
-                                <rect key="frame" x="-4791" y="312" width="9996" height="175"/>
+                                <rect key="frame" x="-2793" y="312" width="6000" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="5Zl-u8-gPo"/>
                                 </constraints>
@@ -526,14 +526,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VzE-JA-2CV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FCj-f9-eu8"/>
+                    <navigationItem key="navigationItem" title="Water My Plants" largeTitleDisplayMode="always" id="FCj-f9-eu8"/>
                     <connections>
                         <outlet property="signUpButton" destination="9bp-Rp-c27" id="M43-SU-b1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3N-Jc-v01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="2009"/>
+            <point key="canvasLocation" x="2434.7826086956525" y="2008.9285714285713"/>
         </scene>
         <!--New User Register View Controller-->
         <scene sceneID="T6H-zM-ZI9">
@@ -618,6 +618,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cYl-RP-Svf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7me-5s-t4x"/>
                     <connections>
                         <outlet property="passwordTextField" destination="kgq-xm-CF1" id="2cV-JH-egH"/>
                         <outlet property="phoneNumberTextField" destination="4UN-oN-mD6" id="leF-x8-BWv"/>
@@ -730,11 +731,12 @@
         <!--Navigation Controller-->
         <scene sceneID="OL1-d3-Yda">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWj-hL-9jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bw5-pW-AKE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bqB-rG-oab"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V7A-tN-PUw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -742,9 +744,8 @@
                         <segue destination="py2-8r-EYr" kind="relationship" relationship="rootViewController" id="Pet-Q1-j0K"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LWj-hL-9jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2677" y="1961"/>
+            <point key="canvasLocation" x="3514" y="1978"/>
         </scene>
     </scenes>
     <resources>
@@ -753,6 +754,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YCB-GF-lB7"/>
-        <segue reference="glq-ax-oqy"/>
+        <segue reference="XnS-YF-8Hl"/>
+        <segue reference="Pet-Q1-j0K"/>
     </inferredMetricsTieBreakers>
 </document>

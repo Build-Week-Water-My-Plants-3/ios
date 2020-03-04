@@ -62,6 +62,16 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
 //        user = User(password: "password", phoneNumber: "5558889999", username: "chuck", context: CoreDataStack.shared.mainContext)
 //        plantController.fetchPlantsFromServer(user: user!)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
+    }
+    
+    func updateViews() {
+        guard let user = user else { return }
+        plantController.fetchPlantsFromServer(user: user)
+    }
 }
     // MARK: - Table view data source
 extension UserPlantsViewController: UITableViewDataSource {

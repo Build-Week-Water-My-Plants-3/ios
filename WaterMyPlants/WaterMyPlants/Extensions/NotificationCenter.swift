@@ -11,4 +11,6 @@ import Foundation
 extension Notification.Name {
     
     static let plantSavedToServer = NSNotification.Name("plantSavedToServer")
+    
+    static let userLoggedIn = NSNotification.Name("userLoggedIn")
 }

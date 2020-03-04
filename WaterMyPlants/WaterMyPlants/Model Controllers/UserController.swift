@@ -76,8 +76,7 @@ class UserController {
                     print("\(user.username) does not exist")
                     self.usernameMatch = false
                 }
-                
-                
+
             } catch {
                 print("Username \(user.username) does not exist or there was an error docoding username: \(error)")
                 
@@ -105,8 +104,6 @@ class UserController {
             }
             completion(nil)
         }.resume()
-        
-        
     }
     
     // MARK: - Log In Existing User
@@ -120,9 +117,7 @@ class UserController {
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.get.rawValue
 
-        
         URLSession.shared.dataTask(with: request) { data, response, error in
-           
             if let error = error {
                 completion(error)
                 return
@@ -149,6 +144,11 @@ class UserController {
                 if user.password == password {
                     print("We HAVE a match!!!!!!!!!!!!")
                     self.passwordMatch = true
+                    
+                    DispatchQueue.main.async {
+                        let notificationCenter = NotificationCenter.default
+                        notificationCenter.post(name: .userLoggedIn, object: nil)
+                    }
                 } else {
                     print("We DON'T have a match!!!!!!!!!!!!")
                     self.passwordMatch = false

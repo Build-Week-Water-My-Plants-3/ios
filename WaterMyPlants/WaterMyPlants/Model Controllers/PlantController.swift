@@ -14,6 +14,11 @@ class PlantController {
     
     // Linking to firebase database for testing networking code
     private let baseURL = URL(string: "https://w4t3rmypl4nt5.firebaseio.com/")!
+    let dataLoader: NetworkDataLoader
+    
+    init(dataLoader: NetworkDataLoader = URLSession.shared) {
+        self.dataLoader = dataLoader
+    }
     
     // MARK: - Put Plant to Server
     func put(plant: Plant, completion: @escaping (Error?) -> Void = {_ in }) {

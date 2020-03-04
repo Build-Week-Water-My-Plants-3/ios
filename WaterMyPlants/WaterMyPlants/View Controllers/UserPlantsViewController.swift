@@ -14,22 +14,26 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
     // MARK: - Properties
     var plantController = PlantController()
-    var user: User!
+    var user: User?
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let searchText = searchBar.text
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "species", ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: "user.username == %@", self.user.username!)
+        
+        if self.user != nil {
+        fetchRequest.predicate = NSPredicate(format: "user.username == %@", self.user!.username!)
+        }
         
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
                                              sectionNameKeyPath: "species",
                                              cacheName: nil)
-
+        
         frc.delegate = self
         try? frc.performFetch()
+        
         return frc
     }()
     
@@ -50,7 +54,7 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
         do {
             try fetchedResultsController.performFetch()
             tableView.reloadData()
-        } catch  {
+        } catch {
             print("Fetch Failed!")
         }
     }
@@ -58,14 +62,12 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if user == nil {
+            performSegue(withIdentifier: "ShowLandingSegue", sender: self)
+        }
         registerLocal()
         NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .userLoggedIn, object: nil)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        updateViews()
-//    }
     
     @objc func updateViews() {
         guard let user = user else { return }

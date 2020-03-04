@@ -254,7 +254,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-j3-HPN">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AbP-j3-HPN">
                                                     <rect key="frame" x="20" y="11" width="374" height="98"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nJa-Jq-Qhp">
@@ -432,7 +432,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="hyP-Lb-v2Q" kind="presentation" identifier="SignUpSegue" id="55m-c7-kYQ"/>
+                                    <segue destination="hyP-Lb-v2Q" kind="show" identifier="SignUpSegue" id="55m-c7-kYQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9X-8K-hhb">
@@ -543,11 +543,11 @@
             <objects>
                 <viewController id="hyP-Lb-v2Q" customClass="NewUserRegisterViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9g-5S-Bog">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-O9-TUO">
-                                <rect key="frame" x="207" y="92" width="187" height="34"/>
+                                <rect key="frame" x="207" y="136" width="187" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="QOo-7y-YxK"/>
                                 </constraints>
@@ -555,7 +555,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-xm-CF1">
-                                <rect key="frame" x="207" y="142" width="187" height="34"/>
+                                <rect key="frame" x="207" y="186" width="187" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="Jcu-Yf-Vme"/>
                                 </constraints>
@@ -563,7 +563,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-Xg-dqK">
-                                <rect key="frame" x="100" y="588" width="214" height="34"/>
+                                <rect key="frame" x="100" y="632" width="214" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
@@ -572,7 +572,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-oN-mD6">
-                                <rect key="frame" x="207" y="193" width="187" height="34"/>
+                                <rect key="frame" x="207" y="237" width="187" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="aUH-54-uYg"/>
                                 </constraints>
@@ -580,19 +580,19 @@
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51q-By-NVo">
-                                <rect key="frame" x="20" y="92" width="84" height="21"/>
+                                <rect key="frame" x="20" y="136" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-49-wXn">
-                                <rect key="frame" x="20" y="142" width="78.5" height="21"/>
+                                <rect key="frame" x="20" y="186" width="78.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYm-ei-8nt">
-                                <rect key="frame" x="20" y="193" width="120" height="21"/>
+                                <rect key="frame" x="20" y="237" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -779,8 +779,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YCB-GF-lB7"/>
-        <segue reference="FKF-Xe-5Lw"/>
-        <segue reference="XnS-YF-8Hl"/>
+        <segue reference="inn-xg-xYz"/>
+        <segue reference="glq-ax-oqy"/>
         <segue reference="avh-ud-gvC"/>
     </inferredMetricsTieBreakers>
 </document>

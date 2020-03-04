@@ -59,16 +59,15 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerLocal()
-//        user = User(password: "password", phoneNumber: "5558889999", username: "chuck", context: CoreDataStack.shared.mainContext)
-//        plantController.fetchPlantsFromServer(user: user!)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .userLoggedIn, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateViews()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        updateViews()
+//    }
     
-    func updateViews() {
+    @objc func updateViews() {
         guard let user = user else { return }
         plantController.fetchPlantsFromServer(user: user)
     }

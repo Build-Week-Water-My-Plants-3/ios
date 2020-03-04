@@ -239,11 +239,11 @@
             <objects>
                 <viewController id="py2-8r-EYr" customClass="UserPlantsViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8br-iF-aNX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9R-7p-JnV">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.19339010079999999" green="0.36460977160000002" blue="0.1690846771" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -304,7 +304,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="TeE-Do-yp8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -410,7 +410,7 @@
                         <outlet property="passwordTextField" destination="LX0-9r-hUD" id="jv9-LW-QBB"/>
                         <outlet property="signInButton" destination="38u-tA-uQX" id="TsI-Hu-h9O"/>
                         <outlet property="usernameTextField" destination="ueP-U1-5yx" id="pyy-xx-I9t"/>
-                        <segue destination="py2-8r-EYr" kind="show" identifier="PlantSegue" id="mdL-s8-ISf"/>
+                        <segue destination="Bw5-pW-AKE" kind="show" identifier="PlantSegue" id="zhK-q7-pt1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-ib-UIJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -731,12 +731,11 @@
         <!--Navigation Controller-->
         <scene sceneID="OL1-d3-Yda">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LWj-hL-9jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bw5-pW-AKE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bqB-rG-oab"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V7A-tN-PUw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -744,6 +743,7 @@
                         <segue destination="py2-8r-EYr" kind="relationship" relationship="rootViewController" id="Pet-Q1-j0K"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWj-hL-9jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3514" y="1978"/>
         </scene>
@@ -755,6 +755,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="YCB-GF-lB7"/>
         <segue reference="XnS-YF-8Hl"/>
-        <segue reference="Pet-Q1-j0K"/>
     </inferredMetricsTieBreakers>
 </document>

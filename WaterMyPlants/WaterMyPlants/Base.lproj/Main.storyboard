@@ -447,7 +447,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mock3" translatesAutoresizingMaskIntoConstraints="NO" id="IEC-dJ-jco">
-                                <rect key="frame" x="-2793" y="312" width="6000" height="175"/>
+                                <rect key="frame" x="-4791" y="312" width="9996" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="5Zl-u8-gPo"/>
                                 </constraints>
@@ -688,6 +688,14 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5h-u2-KB5">
+                                <rect key="frame" x="161" y="524" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take a photo!"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="0ou-HH-HiK" eventType="touchUpInside" id="uS0-sc-KfJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>

@@ -14,12 +14,13 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     
     // MARK: - Properties
     var plantController = PlantController()
-    var user: User?
+    var user: User!
     
     private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let searchText = searchBar.text
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "species", ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "user.username == %@", self.user.username!)
         
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
@@ -40,11 +41,10 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     }
     // MARK: - Search Bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var predicate: NSPredicate? = nil
-        if searchText != "" {
+        var predicate: NSPredicate?// = nil
+        if !searchText.isEmpty {
             predicate = NSPredicate(format: "(nickname contains[cd] %@) OR (species contains[cd] %@)", searchText, searchText)
         }
-        
         fetchedResultsController.fetchRequest.predicate = predicate
         
         do {

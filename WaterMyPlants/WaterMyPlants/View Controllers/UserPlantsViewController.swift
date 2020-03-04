@@ -59,8 +59,8 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerLocal()
-        user = User(password: "password", phoneNumber: "5558889999", username: "chuck", context: CoreDataStack.shared.mainContext)
-        plantController.fetchPlantsFromServer(user: user!)
+//        user = User(password: "password", phoneNumber: "5558889999", username: "chuck", context: CoreDataStack.shared.mainContext)
+//        plantController.fetchPlantsFromServer(user: user!)
     }
 }
     // MARK: - Table view data source

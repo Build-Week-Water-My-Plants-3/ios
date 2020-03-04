@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,7 +113,7 @@
         <!--Settings-->
         <scene sceneID="1TX-VK-NW5">
             <objects>
-                <viewController id="tmP-D1-hnw" customClass="NewUserRegisterViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tmP-D1-hnw" customClass="SettingsViewController" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Loc-eW-CTS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,14 +189,18 @@
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGs-Wo-FIA">
-                                <rect key="frame" x="190" y="607" width="34" height="30"/>
+                                <rect key="frame" x="100" y="607" width="214" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="tmP-D1-hnw" eventType="touchUpInside" id="mxC-CP-bxo"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.77014368772506714" green="0.99563103914260864" blue="0.82653415203094482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iHY-eA-9cS" firstAttribute="leading" secondItem="3OC-TU-UMB" secondAttribute="trailing" constant="103" id="0xg-d9-62a"/>
-                            <constraint firstItem="sD8-Jf-iY5" firstAttribute="trailing" secondItem="YGs-Wo-FIA" secondAttribute="trailing" constant="190" id="6Lk-1s-oUH"/>
+                            <constraint firstItem="sD8-Jf-iY5" firstAttribute="trailing" secondItem="YGs-Wo-FIA" secondAttribute="trailing" constant="100" id="6Lk-1s-oUH"/>
                             <constraint firstItem="sD8-Jf-iY5" firstAttribute="trailing" secondItem="h1c-0t-JlQ" secondAttribute="trailing" constant="20" id="7m0-RG-nbF"/>
                             <constraint firstItem="iQb-L9-DNN" firstAttribute="leading" secondItem="sD8-Jf-iY5" secondAttribute="leading" constant="20" id="8wU-6R-P6R"/>
                             <constraint firstItem="sD8-Jf-iY5" firstAttribute="trailing" secondItem="y9j-Ni-NK7" secondAttribute="trailing" constant="20" id="9a9-Lk-dRZ"/>
@@ -220,7 +224,7 @@
                             <constraint firstItem="Qw8-jp-cWK" firstAttribute="leading" secondItem="is0-Gv-uTo" secondAttribute="trailing" constant="108" id="qOc-hy-yjP"/>
                             <constraint firstItem="vQt-T6-8ee" firstAttribute="leading" secondItem="sD8-Jf-iY5" secondAttribute="leading" constant="20" id="saO-gx-IAL"/>
                             <constraint firstItem="A2i-4x-dca" firstAttribute="leading" secondItem="vQt-T6-8ee" secondAttribute="trailing" constant="67" id="tKe-Nq-N4w"/>
-                            <constraint firstItem="YGs-Wo-FIA" firstAttribute="leading" secondItem="sD8-Jf-iY5" secondAttribute="leading" constant="190" id="ulC-lk-Sx2"/>
+                            <constraint firstItem="YGs-Wo-FIA" firstAttribute="leading" secondItem="sD8-Jf-iY5" secondAttribute="leading" constant="100" id="ulC-lk-Sx2"/>
                             <constraint firstItem="h1c-0t-JlQ" firstAttribute="top" secondItem="Qw8-jp-cWK" secondAttribute="bottom" constant="16" id="vAX-HV-am8"/>
                             <constraint firstItem="y9j-Ni-NK7" firstAttribute="top" secondItem="h1c-0t-JlQ" secondAttribute="bottom" constant="16" id="vM0-Ja-CYH"/>
                             <constraint firstItem="3OC-TU-UMB" firstAttribute="leading" secondItem="sD8-Jf-iY5" secondAttribute="leading" constant="20" id="vjK-CR-Mkm"/>
@@ -229,6 +233,14 @@
                         <viewLayoutGuide key="safeArea" id="sD8-Jf-iY5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="tNo-GU-agI"/>
+                    <connections>
+                        <outlet property="newPasswordTextField" destination="h1c-0t-JlQ" id="7sR-cj-l3C"/>
+                        <outlet property="newPhoneNumberTextField" destination="y9j-Ni-NK7" id="JXW-qE-fTo"/>
+                        <outlet property="passwordTextField" destination="Qw8-jp-cWK" id="ZVj-kV-IRe"/>
+                        <outlet property="phoneNumberTextField" destination="A2i-4x-dca" id="g3v-2o-pqG"/>
+                        <outlet property="saveButton" destination="YGs-Wo-FIA" id="rUE-0W-0nh"/>
+                        <outlet property="usernameTextField" destination="iHY-eA-9cS" id="Mq7-Qm-Qqa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfF-Pv-9vr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,7 +460,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mock3" translatesAutoresizingMaskIntoConstraints="NO" id="IEC-dJ-jco">
-                                <rect key="frame" x="-2793" y="312" width="6000" height="175"/>
+                                <rect key="frame" x="-4791" y="312" width="9996" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="5Zl-u8-gPo"/>
                                 </constraints>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1219B09B2410230800A61CBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219B09A2410230800A61CBD /* SettingsViewController.swift */; };
 		4414162F24063DB8002DD160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414162E24063DB8002DD160 /* AppDelegate.swift */; };
 		4414163124063DB8002DD160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414163024063DB8002DD160 /* SceneDelegate.swift */; };
 		4414163324063DB8002DD160 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414163224063DB8002DD160 /* UserSignInViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1219B09A2410230800A61CBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4414162B24063DB8002DD160 /* WaterMyPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMyPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4414162E24063DB8002DD160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4414163024063DB8002DD160 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				4442F0B0240EAADA0018559E /* LandingScreen.swift */,
 				4414163224063DB8002DD160 /* UserSignInViewController.swift */,
 				44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */,
+				1219B09A2410230800A61CBD /* SettingsViewController.swift */,
 				44C1848C2406528C00B69722 /* PlantDetailViewController.swift */,
 				44C184AF240C403400B69722 /* EditPlantViewController.swift */,
 				44C1848E240652AD00B69722 /* UserPlantsViewController.swift */,
@@ -270,6 +273,7 @@
 				44C1848F240652AD00B69722 /* UserPlantsViewController.swift in Sources */,
 				4414164E2406479C002DD160 /* Bearer.swift in Sources */,
 				44C18496240723DA00B69722 /* UserController.swift in Sources */,
+				1219B09B2410230800A61CBD /* SettingsViewController.swift in Sources */,
 				4442F0B1240EAADA0018559E /* LandingScreen.swift in Sources */,
 				44C184B3240C86DC00B69722 /* NotificationCenter.swift in Sources */,
 				44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */,

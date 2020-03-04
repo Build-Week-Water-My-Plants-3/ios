@@ -16,6 +16,7 @@ class NewUserRegisterViewController: UIViewController {
     @IBOutlet private weak var signUpButton: UIButton!
     
     var userController = UserController()
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class NewUserRegisterViewController: UIViewController {
             let phoneNumber = phoneNumberTextField.text,
             !phoneNumber.isEmpty {
             
+            currentUser = User(password: password, phoneNumber: phoneNumber, username: username)
             let user = UserRepresentation(password: password,
                                           phoneNumber: phoneNumber,
                                           username: username)
@@ -121,5 +123,11 @@ class NewUserRegisterViewController: UIViewController {
             
         }
     }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "SignInSegue" {
+                if let signInVC = segue.destination as? UserSignInViewController {
+                    signInVC.currentUser = currentUser
+                }
+            }
+        }
 }
-

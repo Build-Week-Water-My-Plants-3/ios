@@ -19,7 +19,8 @@ class UserSignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateViews()
+        title = "User Sign-In"
         signInButton.layer.cornerRadius = 10
         signInButton.layer.borderWidth = 1
         signInButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
@@ -75,6 +76,14 @@ class UserSignInViewController: UIViewController {
             }
             
         }
+    }
+    
+    private func updateViews() {
+        guard isViewLoaded else { return }
+        guard let currentUser = currentUser else { return }
+
+        usernameTextField.text = currentUser.username
+        passwordTextField.text = currentUser.password
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

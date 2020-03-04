@@ -58,7 +58,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     
-    //MARK: - Take Photo
+    // MARK: - Take Photo
     @IBAction func takePhoto(_ sender: Any) {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
         
@@ -67,8 +67,6 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         imagePickerController.sourceType = .camera
         present(imagePickerController, animated: true, completion: nil)
     }
-    
-    
     
     @IBAction func saveChanges(_ sender: UIBarButtonItem) {
         guard let plantController = plantController,
@@ -111,7 +109,9 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
                     print("Error occured while PUTing new plant to server: \(error)")
                 } else {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "New Plant Added", message: "Your plant was successfully added.", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "New Plant Added",
+                                                                message: "Your plant was successfully added.",
+                                                                preferredStyle: .alert)
                         let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
                             self.dismiss(animated: true, completion: nil)
                         }
@@ -167,7 +167,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         picker.dismiss(animated: true, completion: nil)
     }
     
-    //MARK: - Image Resize
+    // MARK: - Image Resize
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
 
@@ -176,10 +176,10 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
 
         // Figure out what our orientation is, and use that to form the rectangle
         var newSize: CGSize
-        if(widthRatio > heightRatio) {
+        if widthRatio > heightRatio {
             newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
         } else {
-            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
         }
 
         // This is the rect that we've calculated out and this is what is actually used below

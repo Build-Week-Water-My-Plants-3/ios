@@ -80,8 +80,8 @@ class UserSignInViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlantSegue" {
             // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
-            if let navController = segue.destination as? UINavigationController,
-                let plantUserVC = navController.viewControllers.first as? UserPlantsViewController {
+            if let plantUserVC = segue.destination as? UserPlantsViewController {
+//                let plantUserVC = navController.viewControllers.first as? UserPlantsViewController {
                 plantUserVC.user = currentUser
             }
         }

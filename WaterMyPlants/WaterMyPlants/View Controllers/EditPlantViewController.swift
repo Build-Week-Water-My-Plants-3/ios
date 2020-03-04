@@ -25,7 +25,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var plantNickname: UITextField!
     @IBOutlet weak var plantSpecies: UITextField!
     @IBOutlet weak var plantH2OFrequency: UITextField!
-
+    
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,18 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
             break
         }
     }
+    
+    //MARK: - Take Photo
+    @IBAction func takePhoto(_ sender: Any) {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func saveChanges(_ sender: UIBarButtonItem) {
         guard let plantController = plantController,

@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController {
         saveButton.layer.cornerRadius = 10
         saveButton.layer.borderWidth = 1
         saveButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     
@@ -81,6 +84,7 @@ class SettingsViewController: UIViewController {
         usernameTextField.text = user.username
         passwordTextField.text = user.password
         phoneNumberTextField.text = user.phoneNumber
+    
         
         let phoneNumber = ""
         if let username = usernameTextField.text,

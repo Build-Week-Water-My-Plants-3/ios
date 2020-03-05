@@ -24,6 +24,9 @@ class UserSignInViewController: UIViewController {
         signInButton.layer.cornerRadius = 10
         signInButton.layer.borderWidth = 1
         signInButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: - Action Handlers

@@ -45,7 +45,7 @@ class PlantDetailViewController: UIViewController {
         let plantController = plantController else { return }
         let lastWatered = Date()
         plant.lastWatered = lastWatered
-        
+        plantWateredButton.performFlare()
         plantController.updateExistingPlant(for: plant)
         
         let alertController = UIAlertController(title: "Plant Watered!",
@@ -104,5 +104,18 @@ class PlantDetailViewController: UIViewController {
             editPlantVC.plantController = plantController
             editPlantVC.user = user
         }
+    }
+}
+
+extension UIView {
+    func performFlare() {
+        func flare() { transform = CGAffineTransform(scaleX: 1.25, y: 1.75) }
+        func unflare() { transform = .identity }
+        
+        UIView.animate(withDuration: 0.15, animations: { flare() }, completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                unflare()
+            }
+        })
     }
 }

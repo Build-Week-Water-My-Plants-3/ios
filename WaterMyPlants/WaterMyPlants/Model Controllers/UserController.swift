@@ -19,6 +19,12 @@ class UserController {
     var usernameMatch: Bool = false
     var phoneNumber: String = ""
     
+    let dataLoader: NetworkDataLoader
+    
+    init(dataLoader: NetworkDataLoader = URLSession.shared) {
+        self.dataLoader = dataLoader
+    }
+    
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         
@@ -29,7 +35,7 @@ class UserController {
         var getUserRequest = URLRequest(url: getUserURL)
         getUserRequest.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: getUserRequest) { data, response, error in
+        self.dataLoader.loadData(from: getUserRequest) { data, response, error in
             if let error = error {
                 completion(error)
                 return
@@ -67,18 +73,18 @@ class UserController {
                     completion(error)
                     return
                 }
-                URLSession.shared.dataTask(with: request) { _, _, error in
+                self.dataLoader.loadData(from: request) { _, _, error in
                     if let error = error {
                         completion(error)
                         return
                     }
                     completion(nil)
-                }.resume()
+                }
                 completion(error)
                 return
             }
             completion(nil)
-        }.resume()
+        }
     }
     
     // MARK: - Log In Existing User
@@ -92,7 +98,7 @@ class UserController {
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        self.dataLoader.loadData(from: request) { data, response, error in
             if let error = error {
                 completion(error)
                 return
@@ -132,7 +138,7 @@ class UserController {
                 return
             }
             completion(nil)
-        } .resume()
+        }
     }
     
     func getUserPhoneNumber (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
@@ -145,7 +151,7 @@ class UserController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        self.dataLoader.loadData(from: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
@@ -164,7 +170,7 @@ class UserController {
                 return
             }
             completion(nil)
-        }.resume()
+        }
     }
     
     func updateUser (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
@@ -180,13 +186,12 @@ class UserController {
                     completion(error)
                     return
                 }
-                URLSession.shared.dataTask(with: request) { _, _, error in
+                self.dataLoader.loadData(from: request) { _, _, error in
                     if let error = error {
                         completion(error)
                         return
                     }
                     completion(nil)
-                }.resume()
+                }
     }
 }
-

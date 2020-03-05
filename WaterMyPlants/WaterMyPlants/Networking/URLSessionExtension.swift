@@ -9,18 +9,23 @@
 import Foundation
 
 extension URLSession: NetworkDataLoader {
-    func loadData(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) {
-        let loadDataTask = dataTask(with: request) { possibleData, _, possibleError in
+    func loadData(from request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let loadDataTask = dataTask(with: request) { possibleData, possibleResponse, possibleError in
             
             if let error = possibleError {
-                NSLog("Error fetching data: \(error)")
+                completion(nil, nil, error)
+            }
+            
+            if let response = possibleResponse as? HTTPURLResponse,
+            response.statusCode != 200 {
+                completion(nil, response, nil)
             }
             
             guard let data = possibleData else {
-                completion(nil, possibleError)
+                completion(nil, nil, possibleError)
                 return
             }
-            completion(data, nil)
+            completion(data, nil, nil)
         }
         loadDataTask.resume()
     }

@@ -55,7 +55,7 @@ class PlantController {
             completion(error)
             return
         }
-        self.dataLoader.loadData(from: request) { _, possibleError in
+        self.dataLoader.loadData(from: request) { _, _, possibleError in
             guard possibleError == nil else {
                 print("Error PUTing plant to the server: \(possibleError!)")
                 completion(possibleError)
@@ -184,7 +184,7 @@ class PlantController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
         
-        self.dataLoader.loadData(from: request) { _, possibleError in
+        self.dataLoader.loadData(from: request) { _, _, possibleError in
             guard possibleError == nil else {
                 print("Error deleting plant from server: \(possibleError!)")
                 completion(possibleError)

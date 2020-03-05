@@ -125,6 +125,9 @@ extension UserPlantsViewController: UITableViewDataSource {
             guard let newPlantVC = segue.destination as? EditPlantViewController else { return }
             newPlantVC.plantController = plantController
             newPlantVC.user = user
+        } else if segue.identifier == "UserSettingsSegue" {
+            guard let userSettingsVC = segue.destination as? SettingsViewController else { return }
+            userSettingsVC.user = user
         }
     }
     

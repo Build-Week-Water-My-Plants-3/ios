@@ -17,30 +17,10 @@ class UserController {
     var bearer: Bearer?
     var passwordMatch: Bool = false
     var usernameMatch: Bool = false
-    
+    var phoneNumber: String = ""
     
     // MARK: - Register New User
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-//        let registerUserURL = baseURL
-//            .appendingPathComponent(user.username)
-//            .appendingPathExtension("json")
-//        var request = URLRequest(url: registerUserURL)
-//        request.httpMethod = HTTPMethod.put.rawValue
-        
-//        do {
-//            request.httpBody = try JSONEncoder().encode(user)
-//        } catch {
-//            print("Error encoding user object: \(error)")
-//            completion(error)
-//            return
-//        }
-//        URLSession.shared.dataTask(with: request) { _, _, error in
-//            if let error = error {
-//                completion(error)
-//                return
-//            }
-//            completion(nil)
-//        }.resume()
         
         let getUserURL = baseURL
             .appendingPathComponent(user.username)
@@ -50,7 +30,6 @@ class UserController {
         getUserRequest.httpMethod = HTTPMethod.get.rawValue
         
         URLSession.shared.dataTask(with: getUserRequest) { data, response, error in
-            
             if let error = error {
                 completion(error)
                 return
@@ -72,33 +51,29 @@ class UserController {
                 if user.username == username {
                     print("\(username) already exists")
                     self.usernameMatch = true
-                } else {
-                    print("\(user.username) does not exist")
-                    self.usernameMatch = false
                 }
-
             } catch {
-                print("Username \(user.username) does not exist or there was an error docoding username: \(error)")
+                print("Username \(user.username) does not exist which is great!! Now we can create a new User or there was an error docoding username: \(error)")
                 
                 let registerUserURL = self.baseURL
-                            .appendingPathComponent(user.username)
-                            .appendingPathExtension("json")
-                        var request = URLRequest(url: registerUserURL)
-                        request.httpMethod = HTTPMethod.put.rawValue
+                    .appendingPathComponent(user.username)
+                    .appendingPathExtension("json")
+                var request = URLRequest(url: registerUserURL)
+                request.httpMethod = HTTPMethod.put.rawValue
                 do {
-                            request.httpBody = try JSONEncoder().encode(user)
-                        } catch {
-                            print("Error encoding user object: \(error)")
-                            completion(error)
-                            return
-                        }
-                        URLSession.shared.dataTask(with: request) { _, _, error in
-                            if let error = error {
-                                completion(error)
-                                return
-                            }
-                            completion(nil)
-                        }.resume()
+                    request.httpBody = try JSONEncoder().encode(user)
+                } catch {
+                    print("Error encoding user object: \(error)")
+                    completion(error)
+                    return
+                }
+                URLSession.shared.dataTask(with: request) { _, _, error in
+                    if let error = error {
+                        completion(error)
+                        return
+                    }
+                    completion(nil)
+                }.resume()
                 completion(error)
                 return
             }
@@ -108,7 +83,7 @@ class UserController {
     
     // MARK: - Log In Existing User
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
-
+        
         let logInURL = baseURL
             .appendingPathComponent(user.username)
             .appendingPathComponent("password")
@@ -116,33 +91,30 @@ class UserController {
         
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.get.rawValue
-
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(error)
                 return
             }
-            
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
-            
             guard let data = data else {
                 completion(NSError())
                 return
             }
             
             let decoder = JSONDecoder()
-            
             do {
                 let password = try decoder.decode(String.self, from: data)
                 print("firebase password: \(password)")
                 print("text field password: \(user.password)")
                 
                 if user.password == password {
-                    print("We HAVE a match!!!!!!!!!!!!")
+                    print("We HAVE a match!")
                     self.passwordMatch = true
                     
                     DispatchQueue.main.async {
@@ -150,7 +122,7 @@ class UserController {
                         notificationCenter.post(name: .userLoggedIn, object: nil)
                     }
                 } else {
-                    print("We DON'T have a match!!!!!!!!!!!!")
+                    print("We DON'T have a match!")
                     self.passwordMatch = false
                 }
                 
@@ -162,4 +134,59 @@ class UserController {
             completion(nil)
         } .resume()
     }
+    
+    func getUserPhoneNumber (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
+        
+        let requestURL = baseURL
+            .appendingPathComponent(user.username)
+            .appendingPathComponent("phoneNumber")
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                return
+            }
+            if let error = error { completion(error); return}
+            guard let data = data else { completion(NSError()); return}
+            
+            let decoder = JSONDecoder()
+            do {
+                let phoneNumber = try decoder.decode(String.self, from: data)
+                self.phoneNumber = phoneNumber
+            } catch {
+                print("Error decoding object: \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+        }.resume()
+    }
+    
+    func updateUser (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
+        let registerUserURL = baseURL
+                    .appendingPathComponent(user.username)
+                    .appendingPathExtension("json")
+                var request = URLRequest(url: registerUserURL)
+                request.httpMethod = HTTPMethod.put.rawValue
+                do {
+                    request.httpBody = try JSONEncoder().encode(user)
+                } catch {
+                    print("Error encoding user object: \(error)")
+                    completion(error)
+                    return
+                }
+                URLSession.shared.dataTask(with: request) { _, _, error in
+                    if let error = error {
+                        completion(error)
+                        return
+                    }
+                    completion(nil)
+                }.resume()
+    }
 }
+

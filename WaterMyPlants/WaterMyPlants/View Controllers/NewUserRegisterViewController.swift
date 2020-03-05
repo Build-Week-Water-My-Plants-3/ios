@@ -28,8 +28,7 @@ class NewUserRegisterViewController: UIViewController {
     
     // MARK: - Action Handlers
     @IBAction func buttonTapped(_ sender: UIButton) {
-        // perform login or sign up operation based on loginType
-        
+    
         if let username = usernameTextField.text,
             !username.isEmpty,
             let password = passwordTextField.text,
@@ -62,7 +61,7 @@ class NewUserRegisterViewController: UIViewController {
                         self.passwordTextField.text = ""
                         self.phoneNumberTextField.text = ""
                     }
-                    print("Error occured during sign up: \(error)")
+                    print("Error did not occur during sign up: \(error)")
                 } else {
                     DispatchQueue.main.async {
                         self.usernameTextField.text = ""

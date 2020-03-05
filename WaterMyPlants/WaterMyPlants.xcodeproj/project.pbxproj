@@ -24,6 +24,8 @@
 		4442F0B3240F6F220018559E /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0B2240F6F220018559E /* OpeningViewController.swift */; };
 		4442F0B5241010D20018559E /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0B4241010D20018559E /* NetworkDataLoader.swift */; };
 		4442F0B7241010DD0018559E /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0B6241010DD0018559E /* URLSessionExtension.swift */; };
+		4442F0C52410C8B10018559E /* WaterMyPlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0C42410C8B10018559E /* WaterMyPlantsTests.swift */; };
+		4442F0CC2410C8BF0018559E /* MockLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4442F0BC2410B54B0018559E /* MockLoader.swift */; };
 		44C1848B2406526A00B69722 /* NewUserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */; };
 		44C1848D2406528C00B69722 /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848C2406528C00B69722 /* PlantDetailViewController.swift */; };
 		44C1848F240652AD00B69722 /* UserPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C1848E240652AD00B69722 /* UserPlantsViewController.swift */; };
@@ -36,6 +38,16 @@
 		44C184B0240C403400B69722 /* EditPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184AF240C403400B69722 /* EditPlantViewController.swift */; };
 		44C184B3240C86DC00B69722 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C184B2240C86DC00B69722 /* NotificationCenter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4442F0C72410C8B10018559E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4414162324063DB8002DD160 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4414162A24063DB8002DD160;
+			remoteInfo = WaterMyPlants;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1219B09A2410230800A61CBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +69,10 @@
 		4442F0B2240F6F220018559E /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		4442F0B4241010D20018559E /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
 		4442F0B6241010DD0018559E /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		4442F0BC2410B54B0018559E /* MockLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoader.swift; sourceTree = "<group>"; };
+		4442F0C22410C8B10018559E /* WaterMyPlantsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterMyPlantsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4442F0C42410C8B10018559E /* WaterMyPlantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterMyPlantsTests.swift; sourceTree = "<group>"; };
+		4442F0C62410C8B10018559E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44C1848A2406526A00B69722 /* NewUserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserRegisterViewController.swift; sourceTree = "<group>"; };
 		44C1848C2406528C00B69722 /* PlantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
 		44C1848E240652AD00B69722 /* UserPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlantsViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +94,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4442F0BF2410C8B10018559E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				4414162D24063DB8002DD160 /* WaterMyPlants */,
+				4442F0C32410C8B10018559E /* WaterMyPlantsTests */,
 				4414162C24063DB8002DD160 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				4414162B24063DB8002DD160 /* WaterMyPlants.app */,
+				4442F0C22410C8B10018559E /* WaterMyPlantsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +151,16 @@
 				4414164B2406477E002DD160 /* Plant+Convenience.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4442F0C32410C8B10018559E /* WaterMyPlantsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4442F0C42410C8B10018559E /* WaterMyPlantsTests.swift */,
+				4442F0BC2410B54B0018559E /* MockLoader.swift */,
+				4442F0C62410C8B10018559E /* Info.plist */,
+			);
+			path = WaterMyPlantsTests;
 			sourceTree = "<group>";
 		};
 		44C18490240652B900B69722 /* View Controllers */ = {
@@ -194,6 +229,24 @@
 			productReference = 4414162B24063DB8002DD160 /* WaterMyPlants.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4442F0C12410C8B10018559E /* WaterMyPlantsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4442F0C92410C8B10018559E /* Build configuration list for PBXNativeTarget "WaterMyPlantsTests" */;
+			buildPhases = (
+				4442F0BE2410C8B10018559E /* Sources */,
+				4442F0BF2410C8B10018559E /* Frameworks */,
+				4442F0C02410C8B10018559E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4442F0C82410C8B10018559E /* PBXTargetDependency */,
+			);
+			name = WaterMyPlantsTests;
+			productName = WaterMyPlantsTests;
+			productReference = 4442F0C22410C8B10018559E /* WaterMyPlantsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,6 +259,10 @@
 				TargetAttributes = {
 					4414162A24063DB8002DD160 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					4442F0C12410C8B10018559E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 4414162A24063DB8002DD160;
 					};
 				};
 			};
@@ -223,6 +280,7 @@
 			projectRoot = "";
 			targets = (
 				4414162A24063DB8002DD160 /* WaterMyPlants */,
+				4442F0C12410C8B10018559E /* WaterMyPlantsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +293,13 @@
 				4414163B24063DB8002DD160 /* LaunchScreen.storyboard in Resources */,
 				4414163824063DB8002DD160 /* Assets.xcassets in Resources */,
 				4414163624063DB8002DD160 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4442F0C02410C8B10018559E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +358,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4442F0BE2410C8B10018559E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4442F0CC2410C8BF0018559E /* MockLoader.swift in Sources */,
+				4442F0C52410C8B10018559E /* WaterMyPlantsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4442F0C82410C8B10018559E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4414162A24063DB8002DD160 /* WaterMyPlants */;
+			targetProxy = 4442F0C72410C8B10018559E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4414163424063DB8002DD160 /* Main.storyboard */ = {
@@ -470,6 +552,46 @@
 			};
 			name = Release;
 		};
+		4442F0CA2410C8B10018559E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = WaterMyPlantsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craigswanson.WaterMyPlantsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterMyPlants.app/WaterMyPlants";
+			};
+			name = Debug;
+		};
+		4442F0CB2410C8B10018559E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
+				INFOPLIST_FILE = WaterMyPlantsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.craigswanson.WaterMyPlantsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterMyPlants.app/WaterMyPlants";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -487,6 +609,15 @@
 			buildConfigurations = (
 				4414164024063DB8002DD160 /* Debug */,
 				4414164124063DB8002DD160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4442F0C92410C8B10018559E /* Build configuration list for PBXNativeTarget "WaterMyPlantsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4442F0CA2410C8B10018559E /* Debug */,
+				4442F0CB2410C8B10018559E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

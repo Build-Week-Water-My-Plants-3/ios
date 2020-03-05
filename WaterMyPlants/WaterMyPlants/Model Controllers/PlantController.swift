@@ -13,7 +13,12 @@ import CoreData
 class PlantController {
     
     // Linking to firebase database for testing networking code
-    private let baseURL = URL(string: "https://w4t3rmypl4nt5.firebaseio.com/")!
+    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/")!
+    let dataLoader: NetworkDataLoader
+    
+    init(dataLoader: NetworkDataLoader = URLSession.shared) {
+        self.dataLoader = dataLoader
+    }
     
     // MARK: - Put Plant to Server
     func put(plant: Plant, completion: @escaping (Error?) -> Void = {_ in }) {
@@ -50,7 +55,7 @@ class PlantController {
             completion(error)
             return
         }
-        URLSession.shared.dataTask(with: request) { _, _, possibleError in
+        self.dataLoader.loadData(from: request) { _, possibleError in
             guard possibleError == nil else {
                 print("Error PUTing plant to the server: \(possibleError!)")
                 completion(possibleError)
@@ -58,14 +63,14 @@ class PlantController {
             }
             
             completion(nil)
-        }.resume()
+        }
     }
 
     // MARK: - Fetch Plant From Server
     func fetchPlantsFromServer(user: User, completion: @escaping (Error?) -> Void = {_ in }) {
         let requestURL = baseURL.appendingPathComponent(user.username!).appendingPathExtension("json")
 
-        URLSession.shared.dataTask(with: requestURL) { possibleData, _, possibleError in
+        self.dataLoader.loadData(from: requestURL) { possibleData, possibleError in
             guard possibleError == nil else {
                 print("Error fetching plants: \(possibleError!)")
                 completion(possibleError)
@@ -92,11 +97,11 @@ class PlantController {
                 completion(error)
                 return
             }
-        }.resume()
+        }
     }
 
     // MARK: - Update Core Data
-    // I am temporarily not calling this method because it makes loading on the table view look choppy.  It fetches requests from Core Data and then fetches it from the server and replaces it, making the double-loading on the table view seem goofy.  The downside of not having this called is that if information changes on the server (from a different device) it is  not transferred to core data on this device.
+    // Fetches requests from Core Data and then fetches it from the server and replaces it, making the double-loading on the table view seem goofy.  The downside of not having this called is that if information changes on the server (from a different device) it is  not transferred to core data on this device.
     // Assumes that the data on the server is correct and replaces core data with server data
     func updatePlants(with representations: [PlantRepresentation]) throws {
         let plantsWithID = representations//.filter { $0.identifier != nil }
@@ -179,16 +184,18 @@ class PlantController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
         
-        URLSession.shared.dataTask(with: request) { _, _, possibleError in
+        self.dataLoader.loadData(from: request) { _, possibleError in
             guard possibleError == nil else {
                 print("Error deleting plant from server: \(possibleError!)")
                 completion(possibleError)
                 return
             }
             completion(nil)
-        }.resume()
+        }
     }
     
+    // MARK: - Notification Scheduling
+    // TODO: even though I don't want to, I should probably add a plant name to the notification alert because that's what the MVP says to do.
     func scheduleNotifications(with representations: [PlantRepresentation]) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()

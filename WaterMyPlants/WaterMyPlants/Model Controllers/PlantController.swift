@@ -13,7 +13,7 @@ import CoreData
 class PlantController {
     
     // Linking to firebase database for testing networking code
-    private let baseURL = URL(string: "https://w4t3rmypl4nt5.firebaseio.com/")!
+    private let baseURL = URL(string: "https://watermyplants-6308f.firebaseio.com/")!
     let dataLoader: NetworkDataLoader
     
     init(dataLoader: NetworkDataLoader = URLSession.shared) {
@@ -70,7 +70,7 @@ class PlantController {
     func fetchPlantsFromServer(user: User, completion: @escaping (Error?) -> Void = {_ in }) {
         let requestURL = baseURL.appendingPathComponent(user.username!).appendingPathExtension("json")
 
-        URLSession.shared.dataTask(with: requestURL) { possibleData, _, possibleError in
+        self.dataLoader.loadData(from: requestURL) { possibleData, possibleError in
             guard possibleError == nil else {
                 print("Error fetching plants: \(possibleError!)")
                 completion(possibleError)
@@ -97,7 +97,7 @@ class PlantController {
                 completion(error)
                 return
             }
-        }.resume()
+        }
     }
 
     // MARK: - Update Core Data

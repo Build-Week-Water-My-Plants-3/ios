@@ -35,9 +35,6 @@ class PlantController {
                 return
             }
 
-            // we might possibly need to make another object to post to the server depending on what the backend provides.
-            // for example, we might need to make a "plantToPostToServer" that has slightly different parameters than our current "PlantRepresentation" provides.
-
             representation.identifier = identifier.uuidString
             plant.identifier = identifier
             try CoreDataStack.shared.save()
@@ -153,11 +150,6 @@ class PlantController {
     // Called from detail view controller when making changes
     func updateExistingPlant(for plant: Plant) {
         put(plant: plant)
-//        do {
-//            try CoreDataStack.shared.save()
-//        } catch {
-//            print("Error updating existing plant")
-//        }
     }
     
     // MARK: - Delete Existing Plant

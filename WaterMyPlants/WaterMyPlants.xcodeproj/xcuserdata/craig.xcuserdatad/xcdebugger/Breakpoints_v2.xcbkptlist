@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "saveChanges(_:)"
+            landmarkName = "takePhoto(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,8 +110,8 @@
             filePath = "WaterMyPlants/Model Controllers/PlantController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "put(plant:completion:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -141,6 +141,7 @@ class UserController {
         }
     }
     
+    // MARK: - Fetch Phone Number
     func getUserPhoneNumber (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         
         let requestURL = baseURL
@@ -173,6 +174,7 @@ class UserController {
         }
     }
     
+    // MARK: - Update User
     func updateUser (with user: UserRepresentation, completion: @escaping (Error?) -> Void) {
         let registerUserURL = baseURL
                     .appendingPathComponent(user.username)

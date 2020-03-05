@@ -30,8 +30,7 @@ class SettingsViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
-    
-    
+
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let username = usernameTextField.text,
             !username.isEmpty,
@@ -55,17 +54,14 @@ class SettingsViewController: UIViewController {
                     return
                 }
                 
-                
                 DispatchQueue.main.async {
-                    
                     let alertController = UIAlertController(
                         title: "Update Successfull",
                         message: "Password or Phone Number Updated",
                         preferredStyle: .alert)
                     let alertAction = UIAlertAction(
                         title: "OK",
-                        style: UIAlertAction.Style.default,
-                        handler: {action in self.dismiss(animated: true, completion: nil)})
+                        style: .default) { _ in self.dismiss(animated: true, completion: nil)}
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true, completion: nil)
                     
@@ -76,7 +72,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
     private func updateViews() {
         guard isViewLoaded else { return }
         guard let user = user else { return }
@@ -85,7 +80,6 @@ class SettingsViewController: UIViewController {
         passwordTextField.text = user.password
         phoneNumberTextField.text = user.phoneNumber
     
-        
         let phoneNumber = ""
         if let username = usernameTextField.text,
             !username.isEmpty,

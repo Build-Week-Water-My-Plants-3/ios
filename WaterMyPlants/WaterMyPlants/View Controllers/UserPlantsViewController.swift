@@ -16,8 +16,8 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     var plantController = PlantController()
     var user: User?
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
-        let searchText = searchBar.text
+    lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
+//        let searchText = searchBar.text   NOTE: this doesn't seem to be necessary
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "species", ascending: true)]
         

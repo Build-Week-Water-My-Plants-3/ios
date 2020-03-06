@@ -31,6 +31,7 @@ class PlantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         plantWateredButton.layer.cornerRadius = 15
+        plantWateredButton.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
         NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .plantSavedToServer, object: nil)
         updateViews()
     }

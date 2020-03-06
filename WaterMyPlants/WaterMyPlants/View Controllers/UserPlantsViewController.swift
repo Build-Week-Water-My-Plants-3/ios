@@ -65,6 +65,7 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
         if user == nil {
             performSegue(withIdentifier: "ShowLandingSegue", sender: self)
         }
+        tableView.keyboardDismissMode = .onDrag
         registerLocal()
         NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .userLoggedIn, object: nil)
     }

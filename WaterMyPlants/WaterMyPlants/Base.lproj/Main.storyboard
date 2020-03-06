@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,6 +44,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NextWaterDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-9E-9ej">
                                         <rect key="frame" x="0.0" y="121" width="334" height="20.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="PlantDetailNextWaterDateLabel"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,6 +54,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-yU-Fj2">
                                 <rect key="frame" x="50" y="532" width="314" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PlantDetailWateringButton"/>
                                 <state key="normal" title="Tap After Watering Plant!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -384,6 +386,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-U1-5yx">
                                 <rect key="frame" x="207" y="136" width="187" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignInUsername"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="F4k-Oj-OKJ"/>
                                 </constraints>
@@ -392,6 +395,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LX0-9r-hUD">
                                 <rect key="frame" x="207" y="186" width="187" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignInPassword"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="sSw-cE-1AD"/>
                                 </constraints>
@@ -401,6 +405,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38u-tA-uQX">
                                 <rect key="frame" x="100" y="470" width="214" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignInButton"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
@@ -461,6 +466,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-Rp-c27">
                                 <rect key="frame" x="100" y="565.5" width="214" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LandingSignUpButton"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -524,6 +530,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-fF-30Q">
                                         <rect key="frame" x="30" y="0.0" width="95" height="33"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="LandingLogInButton"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="1AU-Q2-z29"/>
                                         </constraints>
@@ -580,6 +587,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-O9-TUO">
                                 <rect key="frame" x="207" y="136" width="187" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RegistrationUsername" label="Username"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="QOo-7y-YxK"/>
                                 </constraints>
@@ -588,6 +596,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-xm-CF1">
                                 <rect key="frame" x="207" y="186" width="187" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RegistrationPassword"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="Jcu-Yf-Vme"/>
                                 </constraints>
@@ -597,6 +606,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-Xg-dqK">
                                 <rect key="frame" x="100" y="471" width="214" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RegistrationSignUpButton"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -605,6 +615,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-oN-mD6">
                                 <rect key="frame" x="207" y="237" width="187" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RegistrationPhoneNumber"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="aUH-54-uYg"/>
                                 </constraints>
@@ -810,9 +821,9 @@
         <image name="mock3" width="6000" height="4000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YCB-GF-lB7"/>
-        <segue reference="FKF-Xe-5Lw"/>
+        <segue reference="cCs-G1-cHE"/>
+        <segue reference="inn-xg-xYz"/>
         <segue reference="XnS-YF-8Hl"/>
-        <segue reference="avh-ud-gvC"/>
+        <segue reference="gKA-Xw-LEe"/>
     </inferredMetricsTieBreakers>
 </document>

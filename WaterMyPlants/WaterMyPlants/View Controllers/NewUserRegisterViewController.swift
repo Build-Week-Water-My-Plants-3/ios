@@ -23,7 +23,7 @@ class NewUserRegisterViewController: UIViewController {
         
         signUpButton.layer.cornerRadius = 10
         signUpButton.layer.borderWidth = 1
-        signUpButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
+        signUpButton.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)

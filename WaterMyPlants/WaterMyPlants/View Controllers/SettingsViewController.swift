@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
         updateViews()
         saveButton.layer.cornerRadius = 10
         saveButton.layer.borderWidth = 1
-        saveButton.layer.borderColor = CGColor(srgbRed: 0.15, green: 0.30, blue: 0.75, alpha: 1.0)
+        saveButton.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)

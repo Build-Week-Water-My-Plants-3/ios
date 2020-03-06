@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     // MARK: - Properties
     var plantController: PlantController?
@@ -29,6 +29,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.plantH2OFrequency.delegate = self
         updateValues()
         let tap = UITapGestureRecognizer(target: self.view,
                                          action: #selector(UIView.endEditing))
@@ -194,5 +195,10 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
 
         return newImage!
 //        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

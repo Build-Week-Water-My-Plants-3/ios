@@ -186,11 +186,13 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
 
         // Actually do the resizing to the rect using the ImageContext stuff
+//        DispatchQueue.global().async {
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         image.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
         return newImage!
+//        }
     }
 }

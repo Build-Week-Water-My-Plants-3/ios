@@ -64,7 +64,7 @@ class PlantDetailViewController: UIViewController {
             if let plant = plant {
                 title = plant.nickname
                 if let plantImage = plant.image {
-                    plantImageView.image = UIImage(data: plantImage)  // TODO: Get this off the main queue
+                    plantImageView.image = UIImage(data: plantImage)
                 } else {
                     plantImageView.image = #imageLiteral(resourceName: "default")
                 }
@@ -74,7 +74,6 @@ class PlantDetailViewController: UIViewController {
                 let daysRemaining = daysToWateringCalc()
                 nextWateringDateLabel.text = daysRemaining
             }
-        
     }
     
     // TODO: write this function once only

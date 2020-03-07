@@ -77,7 +77,7 @@ class PlantDetailViewController: UIViewController {
                 }
                 nicknameLabel.text = plant.nickname
                 speciesLabel.text = plant.species
-                h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) days"
+                h2oFreqencyLabel.text = "Water every \(plant.h2oFrequency) day(s)."
                 let daysRemaining = daysToWateringCalc()
                 nextWateringDateLabel.text = daysRemaining
             }
@@ -93,7 +93,7 @@ class PlantDetailViewController: UIViewController {
         let newWaterDate = Calendar.current.date(byAdding: dateComponent, to: lastWatered)
         guard let daysRemaining = Calendar.current.dateComponents([.day], from: today, to: newWaterDate!).day else { return ""}
         if daysRemaining >= 1 {
-            return "\(daysRemaining + 1) days until next watering."
+            return "\(daysRemaining + 1) day(s) until next watering."
         } else if daysRemaining >= 0 {
             return "Watering is due tomorrow."
         } else {

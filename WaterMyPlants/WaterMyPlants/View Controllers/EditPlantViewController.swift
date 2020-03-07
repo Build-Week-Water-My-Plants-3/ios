@@ -159,7 +159,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
             if let plantImage = plant.image {
                 plantImageView.image = UIImage(data: plantImage)
             } else {
-                plantImageView.image = #imageLiteral(resourceName: "default")
+                plantImageView.image = #imageLiteral(resourceName: "plantsforuser")
             }
             plantNickname.text = plant.nickname
             plantSpecies.text = plant.species

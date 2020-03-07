@@ -25,6 +25,8 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var plantNickname: UITextField!
     @IBOutlet weak var plantSpecies: UITextField!
     @IBOutlet weak var plantH2OFrequency: UITextField!
+    @IBOutlet weak var choosePhoto: UIButton!
+    @IBOutlet weak var takePhoto: UIButton!
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -34,6 +36,13 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         let tap = UITapGestureRecognizer(target: self.view,
                                          action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+        
+        choosePhoto.layer.cornerRadius = 10
+        choosePhoto.layer.borderWidth = 1
+        choosePhoto.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
+        takePhoto.layer.cornerRadius = 10
+        takePhoto.layer.borderWidth = 1
+        takePhoto.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
     }
     
     // MARK: - Actions

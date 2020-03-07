@@ -30,7 +30,11 @@ class PlantDetailViewController: UIViewController {
     // MARK: - View Control Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        plantWateredButton.layer.cornerRadius = 15
+        plantWateredButton.layer.cornerRadius = 10
+        plantWateredButton.layer.cornerRadius = 10
+        plantWateredButton.layer.borderWidth = 1
+        plantWateredButton.layer.borderColor = CGColor(srgbRed: 0.400, green: 0.659, blue: 0.651, alpha: 1.0)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .plantSavedToServer, object: nil)
         updateViews()
     }
@@ -45,15 +49,18 @@ class PlantDetailViewController: UIViewController {
         let plantController = plantController else { return }
         let lastWatered = Date()
         plant.lastWatered = lastWatered
-        plantWateredButton.performFlare()
         plantController.updateExistingPlant(for: plant)
         
         let alertController = UIAlertController(title: "Plant Watered!",
                                                 message: "You watered your plant today! Next watering date has been updated.",
                                                 preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .default) {
+            (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
         alertController.addAction(alertAction)
         self.present(alertController, animated: true)
+        
     }
     
     // MARK: - Methods
@@ -66,7 +73,7 @@ class PlantDetailViewController: UIViewController {
                 if let plantImage = plant.image {
                     plantImageView.image = UIImage(data: plantImage)
                 } else {
-                    plantImageView.image = #imageLiteral(resourceName: "default2")
+                    plantImageView.image = #imageLiteral(resourceName: "plantsforuser")
                 }
                 nicknameLabel.text = plant.nickname
                 speciesLabel.text = plant.species

@@ -66,7 +66,7 @@ class PlantDetailViewController: UIViewController {
                 if let plantImage = plant.image {
                     plantImageView.image = UIImage(data: plantImage)
                 } else {
-                    plantImageView.image = #imageLiteral(resourceName: "default")
+                    plantImageView.image = #imageLiteral(resourceName: "default2")
                 }
                 nicknameLabel.text = plant.nickname
                 speciesLabel.text = plant.species

@@ -36,7 +36,7 @@ class PlantTableViewCell: UITableViewCell {
         if let plantImageData = plant.image {
             plantImage.image = UIImage(data: plantImageData)
         } else {
-            plantImage.image = #imageLiteral(resourceName: "default")
+            plantImage.image = #imageLiteral(resourceName: "default2")
         }
         let daysRemaining = daysToWateringCalc()
         daysToNextWatering.text = daysRemaining

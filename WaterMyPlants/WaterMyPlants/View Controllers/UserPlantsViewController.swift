@@ -47,7 +47,9 @@ class UserPlantsViewController: UIViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var predicate: NSPredicate?// = nil
         if !searchText.isEmpty {
-            predicate = NSPredicate(format: "(nickname contains[cd] %@) OR (species contains[cd] %@)", searchText, searchText)
+            predicate = NSPredicate(format: "user.username == %@ AND (nickname contains[cd] %@ OR species contains[cd] %@)", self.user!.username!, searchText, searchText)
+        } else {
+            predicate = NSPredicate(format: "user.username == %@", self.user!.username!)
         }
         fetchedResultsController.fetchRequest.predicate = predicate
         

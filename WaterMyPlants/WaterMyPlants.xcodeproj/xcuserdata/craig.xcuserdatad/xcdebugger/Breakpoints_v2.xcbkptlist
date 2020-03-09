@@ -7,81 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C746C143-77E9-4847-A047-B3662628F3B8"
+            uuid = "B27C640B-4152-4750-A82A-F218A7D5219D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WaterMyPlants/View Controllers/EditPlantViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "saveChanges(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1381D68E-1FDB-42CD-8007-7499E0F3EC62"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WaterMyPlants/View Controllers/EditPlantViewController.swift"
+            filePath = "WaterMyPlants/View Controllers/UserPlantsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "addNewPhoto(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7DC748D0-181F-4C64-929E-8514CC11919E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WaterMyPlants/View Controllers/EditPlantViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "saveChanges(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7DC748D0-181F-4C64-929E-8514CC11919E - 47a8f5e6cce5665b"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WaterMyPlants.EditPlantViewController.saveChanges(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "WaterMyPlants"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/craig/Development/BuildWeek/Water-My-Plants/iOS/WaterMyPlants/WaterMyPlants/View%20Controllers/EditPlantViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
-                  offsetFromSymbolStart = "4278">
-               </Location>
-               <Location
-                  uuid = "7DC748D0-181F-4C64-929E-8514CC11919E - 510bcbd313e945ee"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WaterMyPlants.EditPlantViewController.saveChanges(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "WaterMyPlants"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/craig/Development/BuildWeek/Water-My-Plants/iOS/WaterMyPlants/WaterMyPlants/View%20Controllers/EditPlantViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "179">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

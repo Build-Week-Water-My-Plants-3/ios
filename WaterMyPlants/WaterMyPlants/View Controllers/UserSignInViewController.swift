@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSignInViewController: UIViewController {
+class UserSignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -95,5 +95,10 @@ class UserSignInViewController: UIViewController {
                 plantUserVC.user = currentUser
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

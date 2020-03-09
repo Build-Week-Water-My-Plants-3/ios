@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewUserRegisterViewController: UIViewController {
+class NewUserRegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -95,4 +95,9 @@ class NewUserRegisterViewController: UIViewController {
                 }
             }
         }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

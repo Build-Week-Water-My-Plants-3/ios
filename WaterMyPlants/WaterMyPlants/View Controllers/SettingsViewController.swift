@@ -66,9 +66,7 @@ class SettingsViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     
                 }
-                
             }
-            
         }
     }
     
@@ -98,8 +96,6 @@ class SettingsViewController: UIViewController {
                     self.phoneNumberTextField.text = self.userController.phoneNumber
                 }
             }
-            
         }
     }
-    
 }

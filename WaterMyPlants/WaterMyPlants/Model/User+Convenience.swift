@@ -13,9 +13,9 @@ extension User {
 
     // these will change when we get the api endpoints.
     enum CodingKeys: String, CodingKey {
-        case password = "password"
-        case phoneNumber = "phoneNumber"
-        case username = "username"
+        case password
+        case phoneNumber = "phone_Number"
+        case username
     }
 
     var userRepresentation: UserRepresentation? {

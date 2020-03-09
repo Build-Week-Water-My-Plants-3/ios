@@ -41,6 +41,7 @@ class UserSignInViewController: UIViewController {
                                           phoneNumber: phoneNumber,
                                           username: username)
             currentUser = User(password: password, phoneNumber: phoneNumber, username: username)
+            
             //run sign in API call
             userController.signIn(with: user) { error in
                 
@@ -75,9 +76,7 @@ class UserSignInViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
-                
             }
-            
         }
     }
     
@@ -93,7 +92,6 @@ class UserSignInViewController: UIViewController {
         if segue.identifier == "PlantSegue" {
             // inject dependencies. injecting this api controller to login view controller so it is shared from this class.
             if let plantUserVC = segue.destination as? UserPlantsViewController {
-//                let plantUserVC = navController.viewControllers.first as? UserPlantsViewController {
                 plantUserVC.user = currentUser
             }
         }

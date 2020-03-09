@@ -187,7 +187,6 @@ class PlantController {
     }
     
     // MARK: - Notification Scheduling
-    // TODO: even though I don't want to, I should probably add a plant name to the notification alert because that's what the MVP says to do.
     func scheduleNotifications(with representations: [PlantRepresentation]) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()

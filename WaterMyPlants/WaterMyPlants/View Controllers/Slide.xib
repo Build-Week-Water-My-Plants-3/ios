@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="WaterMyPlants" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mav-dd-8tU">
+                    <rect key="frame" x="75" y="129" width="264" height="175"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="VHw-Ob-Ovd"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IpQ-Eg-RP6">
+                    <rect key="frame" x="35" y="421.5" width="344" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="ubo-e8-vy6"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Create a new account and sign in.">
+                            <attributes>
+                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="14" name="Papyrus"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiT-sN-KAZ">
+                    <rect key="frame" x="65" y="349" width="284" height="37.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Getting Started">
+                            <attributes>
+                                <font key="NSFont" size="24" name="Papyrus"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yiT-sN-KAZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3E2-g6-9Tp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IpQ-Eg-RP6" secondAttribute="trailing" constant="35" id="4Nc-ho-GHs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Mav-dd-8tU" secondAttribute="trailing" constant="75" id="UpV-L2-6UA"/>
+                <constraint firstItem="Mav-dd-8tU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="85" id="VvH-bI-9Ao"/>
+                <constraint firstItem="yiT-sN-KAZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="65" id="aZU-ha-X9G"/>
+                <constraint firstItem="Mav-dd-8tU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="75" id="dNj-BB-b2F"/>
+                <constraint firstItem="IpQ-Eg-RP6" firstAttribute="top" secondItem="yiT-sN-KAZ" secondAttribute="bottom" constant="35" id="eo0-x7-zEP"/>
+                <constraint firstItem="IpQ-Eg-RP6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="l0t-3v-JZg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yiT-sN-KAZ" secondAttribute="trailing" constant="65" id="uc9-gX-wcJ"/>
+                <constraint firstItem="yiT-sN-KAZ" firstAttribute="top" secondItem="Mav-dd-8tU" secondAttribute="bottom" constant="45" id="x3X-nA-4Lj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="Mav-dd-8tU" id="jmP-NK-Fq7"/>
+                <outlet property="textView" destination="IpQ-Eg-RP6" id="MWh-BB-1pg"/>
+                <outlet property="titleLabel" destination="yiT-sN-KAZ" id="msg-9g-fOE"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="123"/>
+        </view>
+    </objects>
+</document>

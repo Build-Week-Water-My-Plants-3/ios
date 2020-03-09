@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bw5-pW-AKE">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ME7-yU-Fj2">
-                                <rect key="frame" x="72" y="546" width="270" height="70"/>
+                                <rect key="frame" x="72" y="551" width="270" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="PlantDetailWateringButton"/>
                                 <constraints>
@@ -72,7 +72,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-Il-Ehy">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="764" width="414" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <barButtonItem systemItem="done" id="RoC-dn-aKT">
@@ -748,7 +748,7 @@
                                 </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGf-uk-Zf2">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="764" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="save" id="FtM-4T-SVm">
                                         <color key="tintColor" red="0.40000000000000002" green="0.6588235294" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -876,12 +876,53 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SNH-gp-9bi" kind="relationship" relationship="rootViewController" id="cBW-Sa-meu"/>
+                        <segue destination="wQE-a1-eGW" kind="relationship" relationship="rootViewController" id="B1z-Xf-fUk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWj-hL-9jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="272" y="2515"/>
+        </scene>
+        <!--Onboarding Scene-->
+        <scene sceneID="FWs-ll-AWs">
+            <objects>
+                <viewController id="wQE-a1-eGW" customClass="OnboardingScene" customModule="WaterMyPlants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWz-za-I6h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-gB-W7q">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="SFc-Uo-vrL">
+                                <rect key="frame" x="164.66666666666666" y="757" width="85" height="40"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="MIu-SM-BW4"/>
+                                    <constraint firstAttribute="height" constant="40" id="P2w-YE-a0m"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QJj-YA-DAL" firstAttribute="bottom" secondItem="vc8-gB-W7q" secondAttribute="bottom" id="0K5-Rm-SYC"/>
+                            <constraint firstItem="vc8-gB-W7q" firstAttribute="top" secondItem="QJj-YA-DAL" secondAttribute="top" id="4fd-8w-KXf"/>
+                            <constraint firstItem="QJj-YA-DAL" firstAttribute="trailing" secondItem="vc8-gB-W7q" secondAttribute="trailing" id="cTt-cS-8wf"/>
+                            <constraint firstItem="QJj-YA-DAL" firstAttribute="bottom" secondItem="SFc-Uo-vrL" secondAttribute="bottom" constant="65" id="mxt-fa-BJ1"/>
+                            <constraint firstItem="SFc-Uo-vrL" firstAttribute="centerX" secondItem="FWz-za-I6h" secondAttribute="centerX" id="tI1-D8-4nq"/>
+                            <constraint firstItem="vc8-gB-W7q" firstAttribute="leading" secondItem="QJj-YA-DAL" secondAttribute="leading" id="u3P-2Y-f2T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QJj-YA-DAL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="47n-pG-LLN"/>
+                    <connections>
+                        <outlet property="pageControl" destination="SFc-Uo-vrL" id="osa-tc-yeJ"/>
+                        <outlet property="scrollView" destination="vc8-gB-W7q" id="e5c-A5-wOC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ge7-r9-HFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415.94202898550731" y="3159.375"/>
         </scene>
         <!--Opening View Controller-->
         <scene sceneID="hYP-P1-595">
@@ -894,13 +935,107 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="103189" translatesAutoresizingMaskIntoConstraints="NO" id="aIL-hH-Q7y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYA-0s-7To">
+                                <rect key="frame" x="15" y="59" width="384" height="175"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="efz-qc-uwp"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Whether you have a green thumb or a brown thumb, remembering when all of your plants need watering can be confusing and stressful on you and your plants. Use this app to easily keep track of the schedules and enjoy the fauna around you!</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="Papyrus"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKo-9X-5Rb">
+                                <rect key="frame" x="45" y="289" width="324" height="110"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="G9H-ir-LMy"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="To get started create a new account and sign in.  Then start adding plants to your inventory.">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="Papyrus"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-gw-53r">
+                                <rect key="frame" x="45" y="414" width="324" height="110"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Yaa-cf-I1u"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Use a nickname to keep track of plants and take a photo to help you remember who's who.">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="Papyrus"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-OR-ktP">
+                                <rect key="frame" x="45" y="539" width="324" height="110"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Aa8-1y-ljG"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Tap the &quot;Water&quot; button whenever you water your green friend to reset the reminders.">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="Papyrus"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aIL-hH-Q7y" firstAttribute="leading" secondItem="RSQ-XS-jZm" secondAttribute="leading" id="2Aj-p1-cCF"/>
+                            <constraint firstItem="6Rc-gw-53r" firstAttribute="top" secondItem="AKo-9X-5Rb" secondAttribute="bottom" constant="15" id="43H-UI-5Wx"/>
+                            <constraint firstItem="RSQ-XS-jZm" firstAttribute="trailing" secondItem="Phh-OR-ktP" secondAttribute="trailing" constant="45" id="6Eo-4W-km4"/>
+                            <constraint firstItem="6Rc-gw-53r" firstAttribute="leading" secondItem="RSQ-XS-jZm" secondAttribute="leading" constant="45" id="GUI-rm-0re"/>
                             <constraint firstAttribute="bottom" secondItem="aIL-hH-Q7y" secondAttribute="bottom" id="OyP-0t-0S1"/>
+                            <constraint firstItem="RSQ-XS-jZm" firstAttribute="trailing" secondItem="6Rc-gw-53r" secondAttribute="trailing" constant="45" id="Pb9-qX-5Ti"/>
+                            <constraint firstItem="AKo-9X-5Rb" firstAttribute="leading" secondItem="RSQ-XS-jZm" secondAttribute="leading" constant="45" id="b4D-jW-LwQ"/>
+                            <constraint firstItem="rYA-0s-7To" firstAttribute="leading" secondItem="RSQ-XS-jZm" secondAttribute="leading" constant="15" id="d7M-nt-q09"/>
+                            <constraint firstItem="rYA-0s-7To" firstAttribute="top" secondItem="RSQ-XS-jZm" secondAttribute="top" constant="15" id="dBa-Rt-PNz"/>
                             <constraint firstItem="aIL-hH-Q7y" firstAttribute="top" secondItem="cAD-UB-723" secondAttribute="top" id="dk4-O5-uB8"/>
+                            <constraint firstItem="RSQ-XS-jZm" firstAttribute="trailing" secondItem="rYA-0s-7To" secondAttribute="trailing" constant="15" id="eMT-06-jXc"/>
+                            <constraint firstItem="RSQ-XS-jZm" firstAttribute="trailing" secondItem="AKo-9X-5Rb" secondAttribute="trailing" constant="45" id="fUJ-Cu-fhn"/>
+                            <constraint firstItem="rYA-0s-7To" firstAttribute="centerX" secondItem="cAD-UB-723" secondAttribute="centerX" id="gWn-wG-mpg"/>
+                            <constraint firstItem="Phh-OR-ktP" firstAttribute="leading" secondItem="RSQ-XS-jZm" secondAttribute="leading" constant="45" id="jb4-kO-xLU"/>
+                            <constraint firstItem="AKo-9X-5Rb" firstAttribute="top" secondItem="rYA-0s-7To" secondAttribute="bottom" constant="55" id="ltj-0Q-Gii"/>
                             <constraint firstItem="aIL-hH-Q7y" firstAttribute="trailing" secondItem="RSQ-XS-jZm" secondAttribute="trailing" id="mo7-b3-E48"/>
+                            <constraint firstItem="Phh-OR-ktP" firstAttribute="top" secondItem="6Rc-gw-53r" secondAttribute="bottom" constant="15" id="r1h-Af-sH4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RSQ-XS-jZm"/>
                     </view>
@@ -914,7 +1049,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zc1-Bb-Rfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107" y="2515"/>
+            <point key="canvasLocation" x="1112" y="2547"/>
         </scene>
     </scenes>
     <resources>
@@ -923,7 +1058,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YCB-GF-lB7"/>
-        <segue reference="inn-xg-xYz"/>
+        <segue reference="FKF-Xe-5Lw"/>
         <segue reference="glq-ax-oqy"/>
         <segue reference="avh-ud-gvC"/>
     </inferredMetricsTieBreakers>

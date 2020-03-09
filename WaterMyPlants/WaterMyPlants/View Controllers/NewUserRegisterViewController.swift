@@ -82,44 +82,7 @@ class NewUserRegisterViewController: UIViewController {
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)
                         
-                    }
-                    
-                    //                if self.userController.usernameMatch == true {
-                    //                    /// perform sign in api call that is on the main thread because its a UI call
-                    //                    DispatchQueue.main.async {
-                    //                        /// alert window
-                    //                        let alertController = UIAlertController(
-                    //                            title: "Sign Up Successfull",
-                    //                            message: "Now please log in.",
-                    //                            preferredStyle: .alert)
-                    //                        /// alert button
-                    //                        let alertAction = UIAlertAction(
-                    //                            title: "OK",
-                    //                            style: UIAlertAction.Style.default,
-                    //                            handler: { action -> Void in
-                    //                                self.performSegue(withIdentifier: "SignInSegue", sender: self)
-                    //                        })
-                    //                        /// adding action to alert controller
-                    //                        alertController.addAction(alertAction)
-                    //                        self.present(alertController, animated: true)
-                    //
-                    //                    }
-                    //                } else {
-                    //                    DispatchQueue.main.async {
-                    //                        /// alert window
-                    //                        let alertController = UIAlertController(
-                    //                            title: "Sign Up Not Successfull",
-                    //                            message: "Username already exists.",
-                    //                            preferredStyle: .alert)
-                    //                        /// alert button
-                    //                        let alertAction = UIAlertAction(
-                    //                            title: "OK",
-                    //                            style: UIAlertAction.Style.default,
-                    //                            handler: nil)
-                    //                        /// adding action to alert controller
-                    //                        alertController.addAction(alertAction)
-                    //                        self.present(alertController, animated: true)
-                    //
+                    } 
                 }
             }
             

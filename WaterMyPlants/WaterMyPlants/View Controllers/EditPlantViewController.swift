@@ -111,7 +111,7 @@ class EditPlantViewController: UIViewController, UIImagePickerControllerDelegate
         } else {
             let newPlant = Plant(nickname: nickname, species: species, h2oFrequency: Int(h2oFrequencyInt), image: plantImageData)
             
-            // I think right here is where we assign the plant to the user.
+            // Assign the plant to the user in core data.
              newPlant.user = user
             
             plantController.put(plant: newPlant) { error in

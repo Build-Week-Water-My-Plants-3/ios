@@ -23,7 +23,7 @@ class WaterMyPlantsUITests: XCTestCase, UITextFieldDelegate {
         // Reminder: Hardware keyboard must be turned off in the simulator.
         let app = XCUIApplication()
         app/*@START_MENU_TOKEN@*/.buttons["LandingSignUpButton"]/*[[".buttons[\"Sign Up\"]",".buttons[\"LandingSignUpButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
+
         let username = app.textFields["RegistrationUsername"]
         username.tap()
         username.typeText("BarleyCorn")
@@ -85,7 +85,6 @@ class WaterMyPlantsUITests: XCTestCase, UITextFieldDelegate {
         let password = app.secureTextFields["SignInPassword"]
         password.tap()
         password.typeText("password")
-        
         app/*@START_MENU_TOKEN@*/.buttons["SignInButton"]/*[[".buttons[\"Sign In\"]",".buttons[\"SignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         XCTAssertTrue(app.navigationBars["Plants"].exists)
     }
@@ -103,7 +102,6 @@ class WaterMyPlantsUITests: XCTestCase, UITextFieldDelegate {
         let password = app.secureTextFields["SignInPassword"]
         password.tap()
         password.typeText("password")
-        
         app/*@START_MENU_TOKEN@*/.buttons["SignInButton"]/*[[".buttons[\"Sign In\"]",".buttons[\"SignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
         // In UserPlantsViewController
@@ -113,7 +111,7 @@ class WaterMyPlantsUITests: XCTestCase, UITextFieldDelegate {
     
     func testCreateNewPlant() {
     // In Landing Screen
-    app/*@START_MENU_TOKEN@*/.buttons["LandingLogInButton"]/*[[".buttons[\"Login Here\"]",".buttons[\"LandingLogInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["LandingLogInButton"]/*[[".buttons[\"Login Here\"]",".buttons[\"LandingLogInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     
     // In UserSignInViewController
     let username = app.textFields["SignInUsername"]
@@ -123,8 +121,7 @@ class WaterMyPlantsUITests: XCTestCase, UITextFieldDelegate {
     let password = app.secureTextFields["SignInPassword"]
     password.tap()
     password.typeText("password")
-    
-    app/*@START_MENU_TOKEN@*/.buttons["SignInButton"]/*[[".buttons[\"Sign In\"]",".buttons[\"SignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["SignInButton"]/*[[".buttons[\"Sign In\"]",".buttons[\"SignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     
     // In UserPlantsViewController
     app.navigationBars["Plants"].buttons["Add"].tap()

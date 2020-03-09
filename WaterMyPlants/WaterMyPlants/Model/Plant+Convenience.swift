@@ -12,11 +12,11 @@ import CoreData
 extension Plant {
 
     enum CodingKeys: String, CodingKey {
-        case identifier = "identifier"
-        case nickname = "nickname"
-        case species = "species"
-        case h2oFrequency = "h2oFrequency"
-        case image = "image"
+        case identifier
+        case nickname
+        case species
+        case h2oFrequency
+        case image
     }
 
     var plantRepresentation: PlantRepresentation? {
